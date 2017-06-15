@@ -12,6 +12,7 @@ namespace XuDiana.Modes
             var w = comboMenu.GetCheckbox("useW") && W.IsReady();
             var e = comboMenu.GetCheckbox("useE") && E.IsReady();
             var r = comboMenu.GetCheckbox("useR") && R.IsReady();
+            var r2 = comboMenu.GetCheckbox("useR2") && R.IsReady();
             var qbuff = comboMenu.GetCheckbox("useRbuff");
             var target = TargetSelector.GetTarget(Q.Range, TargetSelector.DamageType.Magical);
             var rtarget = TargetSelector.GetTarget(R.Range, TargetSelector.DamageType.Magical);
@@ -29,6 +30,10 @@ namespace XuDiana.Modes
                     {
                         R.Cast(target);
                         //Chat.Print("ComboQr");
+                        if (r2 && target.IsValidTarget(R.Range))
+                        {
+                            R.Cast(target);
+                        }
                     }
                     else if(!qbuff)
                     {
