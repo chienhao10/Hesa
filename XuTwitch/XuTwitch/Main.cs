@@ -13,7 +13,7 @@ namespace XuTwitch
     {
         private readonly Champion champion = Champion.Twitch;
 
-        public string Name => "Xu Twitch" + champion;
+        public string Name => "Xu " + champion;
 
         public string Version => "0.0.1";
 
@@ -47,6 +47,7 @@ namespace XuTwitch
         }
 
 
+        int qRange = 600;
 
         private void Game_OnTick()
         {
@@ -79,6 +80,15 @@ namespace XuTwitch
                 Flee.DoFlee();
             }
 
+            
+            if (qRange == GetQRange()) return;
+            qRange = GetQRange();
+            Q.Range = qRange;
+        }
+
+        public static int GetQRange()
+        {
+            return comboMenu.GetSlider("qRange");
         }
 
         public static int GetEStackCount(Obj_AI_Base target)

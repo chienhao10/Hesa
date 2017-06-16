@@ -12,8 +12,7 @@ namespace XuTwitch
 
         public static void LoadSpells()
         {
-            var qr = comboMenu.GetSlider("qRange");
-            Q = new Spell(SpellSlot.Q, qr);   
+            Q = new Spell(SpellSlot.Q, 600);   
             W = new Spell(SpellSlot.W, 950, damageType:TargetSelector.DamageType.Physical); 
             E = new Spell(SpellSlot.E, 1200); 
             R = new Spell(SpellSlot.R, 975, damageType: TargetSelector.DamageType.Physical);

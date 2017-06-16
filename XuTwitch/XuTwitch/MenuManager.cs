@@ -54,7 +54,7 @@ namespace XuTwitch
             drawingMenu.Add(new MenuCheckbox("drawW", "Draw W", true));
             drawingMenu.Add(new MenuCheckbox("drawE", "Draw E", true));
             drawingMenu.Add(new MenuCheckbox("drawR", "Draw R", true));
-            drawingMenu.Add(new MenuCheckbox("drawMode", "Draw Q Count Down", true));
+            //drawingMenu.Add(new MenuCheckbox("drawMode", "Draw Q Count Down", true));
 
             killstealMenu = Home.AddSubMenu(prefix + "KillSteal");
             killstealMenu.Add(new MenuCheckbox("enable", "Enable", true));
@@ -63,15 +63,9 @@ namespace XuTwitch
             killstealMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 10));
 
             miscMenu = Home.AddSubMenu(prefix + "Misc");
-            miscMenu.Add(new MenuCheckbox("recallq", "Recall Q", true));
+            //miscMenu.Add(new MenuCheckbox("recallq", "Recall Q", true));
             miscMenu.Add(new MenuCheckbox("agW", "AntiGapclose W", true));
-            miscMenu.Add(new MenuCheckbox("orE", "Always Out of Range E", true));
             miscMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 30));
-            miscMenu.Add(new MenuCheckbox("level", "Enable Spell Leveler", true));
-            miscMenu.Add(new MenuSlider("levelDelay", "Level UP Delay", 10, 1000, 200));
-            miscMenu.Add(new MenuCombo("levelFirst", "Level UP First", new[] { "Q", "W", "E" }));
-            miscMenu.Add(new MenuCombo("levelSecond", "Level UP Second", new[] { "Q", "W", "E" }, 1));
-            miscMenu.Add(new MenuCombo("levelThird", "Level UP Third", new[] { "Q", "W", "E" }, 2));
         }
 
         public static bool GetCheckbox(this Menu menu, string value)
