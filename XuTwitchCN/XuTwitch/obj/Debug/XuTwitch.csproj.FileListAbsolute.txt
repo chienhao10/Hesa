@@ -1,0 +1,27 @@
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\bin\Debug\XuTwitch.dll
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\bin\Debug\XuTwitch.pdb
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\bin\Debug\HesaEngine.Core.dll
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\bin\Debug\SharpDX.Direct3D9.dll
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\bin\Debug\SharpDX.DirectInput.dll
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\bin\Debug\SharpDX.dll
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\bin\Debug\HesaEngine.Wrapper.dll
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\bin\Debug\Runtime.dll
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\bin\Debug\SharpDX.xml
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\bin\Debug\SharpDX.Direct3D9.xml
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\bin\Debug\SharpDX.DirectInput.xml
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\obj\Debug\XuTwitch.csprojResolveAssemblyReference.cache
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\obj\Debug\XuTwitch.dll
+c:\users\sch\documents\visual studio 2015\Projects\XuTwitch\XuTwitch\obj\Debug\XuTwitch.pdb
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\bin\Debug\XuTwitch.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\bin\Debug\XuTwitch.pdb
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\bin\Debug\HesaEngine.Core.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\bin\Debug\SharpDX.DirectInput.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\bin\Debug\SharpDX.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\bin\Debug\HesaEngine.Wrapper.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\bin\Debug\Runtime.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\bin\Debug\SharpDX.xml
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\bin\Debug\SharpDX.Direct3D9.xml
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\bin\Debug\SharpDX.DirectInput.xml
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\obj\Debug\XuTwitch.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitch\XuTwitch\obj\Debug\XuTwitch.pdb

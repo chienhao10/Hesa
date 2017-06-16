@@ -43,7 +43,7 @@ namespace XuTwitch
             LoadDrawings();
 
             Game.OnTick += Game_OnTick;
-            Chat.Print(" Xu Twitch Loaded2");
+            Chat.Print(" Xu Twitch Loaded");
         }
 
 

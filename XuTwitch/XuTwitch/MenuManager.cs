@@ -19,7 +19,7 @@ namespace XuTwitch
             //comboMenu.Add(new MenuSlider("qCount", "Enemy Count to Use Q ", 1, 5, 2));
             comboMenu.Add(new MenuSlider("qRange", "Enemy In Range to Use Q", 600, 1800, 900));
             comboMenu.Add(new MenuCheckbox("useW", "Use W", true));
-            comboMenu.Add(new MenuCheckbox("useE", "Use E", true));
+            comboMenu.Add(new MenuCheckbox("useE", "Use E", false));
             comboMenu.Add(new MenuSlider("eStack", "Numer of Stacks Auto E ", 1, 6, 5));
             comboMenu.Add(new MenuCheckbox("useR", "Use R", false));
             comboMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 50));
@@ -66,8 +66,8 @@ namespace XuTwitch
             miscMenu = Home.AddSubMenu(prefix + "Misc");
             //miscMenu.Add(new MenuCheckbox("recallq", "Recall Q", true));
             miscMenu.Add(new MenuCheckbox("agW", "AntiGapclose W", true));
-            miscMenu.Add(new MenuCheckbox("save", "Always Save Mana For E", true));
             miscMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 30));
+            //miscMenu.Add(new MenuCheckbox("save", "Always Save Mana For E", true));
         }
 
         public static bool GetCheckbox(this Menu menu, string value)
