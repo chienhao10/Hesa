@@ -14,11 +14,17 @@ namespace XuDiana.Modes
             var w = miscMenu.GetCheckbox("agW") && W.IsReady();
             var e = miscMenu.GetCheckbox("agE") && E.IsReady();
 
-            if (w && gapcloser.Sender.IsEnemy && gapcloser.Sender.IsDashing() && gapcloser.Sender.IsValidTarget(W.Range))
-                W.Cast();
+            if (gapcloser.End.Distance(ObjectManager.Player.Position) > 300) return;
 
-            if (e && gapcloser.Sender.IsEnemy && gapcloser.Sender.IsDashing() && gapcloser.Sender.IsValidTarget(E.Range))
+            if (w)
+            {
+                W.Cast();
+            }
+
+            if (e)
+            {
                 E.Cast();
+            }
         }
     }
 }

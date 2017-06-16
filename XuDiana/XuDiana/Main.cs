@@ -13,7 +13,7 @@ namespace XuDiana
     {
         private readonly Champion champion = Champion.Diana;
 
-        public string Name => "Xu Diana" + champion;
+        public string Name => "Xu" + champion;
 
         public string Version => "0.0.3";
 
