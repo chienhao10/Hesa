@@ -35,13 +35,14 @@ namespace XuTwitch
             laneclearMenu.Add(new MenuCheckbox("useQ", "Use Q", true));
             laneclearMenu.Add(new MenuCheckbox("useW", "Use W", true));
             laneclearMenu.Add(new MenuCheckbox("useE", "Use E", true));
+            laneclearMenu.Add(new MenuSlider("eNumber", "Numer of Minions Can Kill With E ", 1, 16, 3));
             laneclearMenu.Add(new MenuSlider("leStack", "Numer of Stacks Auto E ", 1, 6, 4));
             laneclearMenu.Add(new MenuCheckbox("useR", "Use R", false));
             laneclearMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 50));
 
 
             lasthitMenu = Home.AddSubMenu(prefix + "LastHit");
-            lasthitMenu.Add(new MenuCheckbox("useE", "Use E", true));
+            lasthitMenu.Add(new MenuCheckbox("useE", "Use E", false));
             lasthitMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 50));
 
             fleeMenu = Home.AddSubMenu(prefix + "Flee");
@@ -65,6 +66,7 @@ namespace XuTwitch
             miscMenu = Home.AddSubMenu(prefix + "Misc");
             //miscMenu.Add(new MenuCheckbox("recallq", "Recall Q", true));
             miscMenu.Add(new MenuCheckbox("agW", "AntiGapclose W", true));
+            miscMenu.Add(new MenuCheckbox("save", "Always Save Mana For E", true));
             miscMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 30));
         }
 

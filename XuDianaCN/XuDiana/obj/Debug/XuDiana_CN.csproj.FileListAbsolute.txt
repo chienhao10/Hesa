@@ -11,4 +11,3 @@ C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\XuDiana_CN.dll
 C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\XuDiana_CN.pdb
 C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\obj\Debug\XuDiana_CN.dll
 C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\obj\Debug\XuDiana_CN.pdb
-C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\obj\Debug\XuDiana_CN.csprojResolveAssemblyReference.cache

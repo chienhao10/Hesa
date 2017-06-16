@@ -9,8 +9,9 @@ namespace XuDiana.Modes
 
         public static void DoAntigapclose(ActiveGapcloser gapcloser)
         {
+            Chat.Print("Detected GC");
             if (gapcloser.Sender.IsAlly || gapcloser.Sender.IsDead || gapcloser.Sender.IsMe) return;
-
+            Chat.Print("Enemy GC");
             var w = miscMenu.GetCheckbox("agW") && W.IsReady();
             var e = miscMenu.GetCheckbox("agE") && E.IsReady();
 

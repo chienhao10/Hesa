@@ -9,15 +9,15 @@ namespace XuTwitch.Modes
     {
         public static void DoLastHit()
         {
-            var e = lasthitMenu.GetCheckbox("useE") && Q.IsReady();
-            var minion = ObjectManager.MinionsAndMonsters.Enemy.Where(x => x.IsValidTarget(Q.Range));
+            var e = lasthitMenu.GetCheckbox("useE") && E.IsReady();
+            var minion = ObjectManager.MinionsAndMonsters.Enemy.Where(x => x.IsValidTarget(E.Range));
 
             foreach (var m in minion)
             {
                 if (e && E.GetDamage(m) >= m.Health && m.IsValidTarget(E.Range))
                 {
                     E.Cast();
-                    //Chat.Print("lastw");
+                    //Chat.Print("laste");
                 }
             }
         }

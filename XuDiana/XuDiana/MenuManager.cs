@@ -83,11 +83,11 @@ namespace XuDiana
             miscMenu.Add(new MenuCheckbox("agW", "AntiGapclose W", true));
             miscMenu.Add(new MenuCheckbox("agE", "AntiGapclose E", true));
             miscMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 30));
-            miscMenu.Add(new MenuCheckbox("level", "Enable Spell Leveler", true));
+            /*miscMenu.Add(new MenuCheckbox("level", "Enable Spell Leveler", true));
             miscMenu.Add(new MenuSlider("levelDelay", "Level UP Delay", 10, 1000, 200));
             miscMenu.Add(new MenuCombo("levelFirst", "Level UP First", new[] { "Q", "W", "E" }));
             miscMenu.Add(new MenuCombo("levelSecond", "Level UP Second", new[] { "Q", "W", "E" }, 1));
-            miscMenu.Add(new MenuCombo("levelThird", "Level UP Third", new[] { "Q", "W", "E" }, 2));
+            miscMenu.Add(new MenuCombo("levelThird", "Level UP Third", new[] { "Q", "W", "E" }, 2));*/
         }
 
         public static bool GetCheckbox(this Menu menu, string value)

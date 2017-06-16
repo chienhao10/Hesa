@@ -82,12 +82,12 @@ namespace XuDiana
             miscMenu = Home.AddSubMenu(prefix + "杂项");
             miscMenu.Add(new MenuCheckbox("agW", "防突进 W", true));
             miscMenu.Add(new MenuCheckbox("agE", "防突进 E", true));
-            miscMenu.Add(new MenuSlider("mana", "蓝量必须 >= ", 10, 100, 30));
+            /*miscMenu.Add(new MenuSlider("mana", "蓝量必须 >= ", 10, 100, 30));
             miscMenu.Add(new MenuCheckbox("level", "启用自动加点", true));
             miscMenu.Add(new MenuSlider("levelDelay", "加点延迟", 10, 1000, 200));
             miscMenu.Add(new MenuCombo("levelFirst", "第一加点", new[] { "Q", "W", "E" }));
             miscMenu.Add(new MenuCombo("levelSecond", "第二加点", new[] { "Q", "W", "E" }, 1));
-            miscMenu.Add(new MenuCombo("levelThird", "第三加点", new[] { "Q", "W", "E" }, 2));
+            miscMenu.Add(new MenuCombo("levelThird", "第三加点", new[] { "Q", "W", "E" }, 2));*/
         }
 
         public static bool GetCheckbox(this Menu menu, string value)

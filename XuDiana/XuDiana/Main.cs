@@ -37,7 +37,7 @@ namespace XuDiana
             LoadMenu();
 
             LoadSpells();
-
+            
             HesaEngine.SDK.AntiGapcloser.OnEnemyGapcloser += Modes.AntiGapcloser.DoAntigapclose;
 
             LoadDrawings();
