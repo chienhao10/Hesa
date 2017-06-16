@@ -1,0 +1,14 @@
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\XuTwitchCN.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\XuTwitchCN.pdb
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\HesaEngine.Core.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\SharpDX.DirectInput.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\SharpDX.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\HesaEngine.Wrapper.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\Runtime.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\SharpDX.xml
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\SharpDX.Direct3D9.xml
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\SharpDX.DirectInput.xml
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\obj\Debug\XuTwitchCN.csprojResolveAssemblyReference.cache
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\obj\Debug\XuTwitchCN.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\obj\Debug\XuTwitchCN.pdb
