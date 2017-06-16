@@ -19,7 +19,7 @@ namespace XuTwitch.Modes
             var e = laneclearMenu.GetCheckbox("useE") && E.IsReady();
             //var le = laneclearMenu.GetSlider("leStack");
             var lcn = laneclearMenu.GetSlider("eNumber");
-            var savee = miscMenu.GetCheckbox("save") && ObjectManager.Player.ManaPercent > E.ManaCost;
+
             var minion = ObjectManager.MinionsAndMonsters.Enemy.Where(x => x.IsValidTarget());
             var miniond = ObjectManager.MinionsAndMonsters.Enemy.Where(x => x.IsValidTarget() && x.Health < E.GetDamage(x));
 
@@ -29,17 +29,17 @@ namespace XuTwitch.Modes
                     MinionAround++;
                 minionwilldie++;
 
-                if (w && MinionAround >= 3 && m.IsValidTarget(W.Range) && savee)
+                if (w && MinionAround >= 3 && m.IsValidTarget(W.Range))
                 {
                     W.PredictionCast(m, HitChance.High);
                     //Chat.Print("lcw");
                 }
-                if (q && MinionAround >= 3 && m.IsValidTarget(Q.Range) && savee)
+                if (q && MinionAround >= 3 && m.IsValidTarget(Q.Range))
                 {
                     Q.Cast();
                     //Chat.Print("lcq");
                 }
-                if (r && MinionAround >= 6 && m.IsValidTarget(R.Range) && savee)
+                if (r && MinionAround >= 6 && m.IsValidTarget(R.Range))
                 {
                     R.Cast(m);
                     //Chat.Print("lcr");

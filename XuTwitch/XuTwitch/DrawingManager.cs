@@ -22,7 +22,7 @@ namespace XuTwitch
 
             if (drawingMenu.GetCheckbox("drawQ"))
             {
-                Drawing.DrawCircle(ObjectManager.Me.Position, Q.Range, Color.Green);
+                Drawing.DrawCircle(ObjectManager.Me.Position, Q.Range, Color.Yellow);
             }
 
             if (drawingMenu.GetCheckbox("drawW"))
@@ -31,11 +31,11 @@ namespace XuTwitch
             }
             if (drawingMenu.GetCheckbox("drawE"))
             {
-                Drawing.DrawCircle(ObjectManager.Me.Position, E.Range, Color.Red);
+                Drawing.DrawCircle(ObjectManager.Me.Position, E.Range, Color.Green);
             }
             if (drawingMenu.GetCheckbox("drawR"))
             {
-                Drawing.DrawCircle(ObjectManager.Me.Position, R.Range, Color.Green);
+                Drawing.DrawCircle(ObjectManager.Me.Position, R.Range, Color.Red);
             }
 
             Vector2 ScreenPosition = Drawing.WorldToScreen(ObjectManager.Player.Position);

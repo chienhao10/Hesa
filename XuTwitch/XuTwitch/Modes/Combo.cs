@@ -17,22 +17,18 @@ namespace XuTwitch.Modes
             var e = comboMenu.GetCheckbox("useE") && E.IsReady();
             var estack = comboMenu.GetSlider("eStack");
             var r = comboMenu.GetCheckbox("useR") && R.IsReady();
-            var savee = miscMenu.GetCheckbox("save");
-
+            
             var target = TargetSelector.GetTarget(650, TargetSelector.DamageType.Physical);
             var qtarget = TargetSelector.GetTarget(GetQRange(), TargetSelector.DamageType.Physical);
 
             if (q && qtarget.IsValidTarget(GetQRange()))
             {
-                if (savee && ObjectManager.Player.ManaPercent > E.ManaCost)
-                {
-                    Q.Cast();
-                }
+                Q.Cast();
             }
 
             if (target != null)
             {
-                if (w && target.IsValidTarget(W.Range) && ObjectManager.Player.ManaPercent > E.ManaCost)
+                if (w && target.IsValidTarget(W.Range))
                 {
                     W.PredictionCast(target, HitChance.High);
                 }
@@ -45,11 +41,9 @@ namespace XuTwitch.Modes
                 }
                 if (r && target.IsValidTarget(R.Range))
                 {
-                    if (savee && ObjectManager.Player.ManaPercent > E.ManaCost)
-                    {
-                        R.Cast();
-                    }
+                    R.Cast();
                 }
+
             }
         }
 

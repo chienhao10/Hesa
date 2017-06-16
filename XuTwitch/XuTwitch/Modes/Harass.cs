@@ -11,7 +11,6 @@ namespace XuTwitch.Modes
         {
             var w = harassMenu.GetCheckbox("useW") && W.IsReady();
             var e = harassMenu.GetCheckbox("useE") && E.IsReady();
-            var savee = miscMenu.GetCheckbox("save") && ObjectManager.Player.ManaPercent > E.ManaCost;
             var estack = harassMenu.GetSlider("heStack");
 
             var target = TargetSelector.GetTarget(Q.Range, TargetSelector.DamageType.Magical);
@@ -19,7 +18,7 @@ namespace XuTwitch.Modes
 
             if (target != null)
             {
-                if (w && target.IsValidTarget(W.Range) && savee)
+                if (w && target.IsValidTarget(W.Range))
                 {
                     W.PredictionCast(target, HitChance.High);
                 }
