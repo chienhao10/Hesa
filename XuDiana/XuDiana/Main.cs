@@ -15,7 +15,7 @@ namespace XuDiana
 
         public string Name => "Xu Diana" + champion;
 
-        public string Version => "0.0.2";
+        public string Version => "0.0.3";
 
         public string Author => "Xu211";
 
@@ -83,7 +83,12 @@ namespace XuDiana
                 ObjectManager.Player.IssueOrder(GameObjectOrder.MoveTo, Game.CursorPosition);
                 ChaseCombo.DoChaseCombo();
             }
-            
+
+            if (comboMenu.GetKeybind("advK"))
+            {
+                ObjectManager.Player.IssueOrder(GameObjectOrder.MoveTo, Game.CursorPosition);
+                GapCombo.DoGapCombo();
+            }
         }
     }
 }

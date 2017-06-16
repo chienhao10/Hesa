@@ -22,6 +22,7 @@ namespace XuDiana
             comboMenu.Add(new MenuCheckbox("useR2", "Use R2", false));
             comboMenu.Add(new MenuCheckbox("useRgap", "Use R Gap Close", true));
             comboMenu.Add(new MenuCheckbox("useRbuff", "Use R Only R Moonlight Target", false));
+            comboMenu.Add(new MenuKeybind("advK", "Advanced Combo Key", SharpDX.DirectInput.Key.L));
             comboMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 50));
 
             //Chase Combo

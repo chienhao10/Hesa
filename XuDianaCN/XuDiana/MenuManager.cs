@@ -22,6 +22,7 @@ namespace XuDiana
             comboMenu.Add(new MenuCheckbox("useR2", "使用 R2", false));
             comboMenu.Add(new MenuCheckbox("useRgap", "使用R突进", false));
             comboMenu.Add(new MenuCheckbox("useRbuff", "只对Q Buff敌人使用R", false));
+            comboMenu.Add(new MenuKeybind("advK", "高级连招模式", SharpDX.DirectInput.Key.L));
             comboMenu.Add(new MenuSlider("mana", "蓝量必须 >= ", 10, 100, 50));
 
             //Chase Combo

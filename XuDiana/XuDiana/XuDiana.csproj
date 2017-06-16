@@ -61,6 +61,7 @@
     <Compile Include="Modes\ChaseMode.cs" />
     <Compile Include="Modes\Combo.cs" />
     <Compile Include="Modes\Flee.cs" />
+    <Compile Include="Modes\GapCombo.cs" />
     <Compile Include="Modes\Harass.cs" />
     <Compile Include="Modes\Killsteal.cs" />
     <Compile Include="Modes\LaneClear.cs" />

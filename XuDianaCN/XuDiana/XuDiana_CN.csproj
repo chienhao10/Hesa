@@ -7,8 +7,8 @@
     <ProjectGuid>{9EB0A8F9-F773-48C1-865F-1B8D7CCDAB86}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XuDiana</RootNamespace>
-    <AssemblyName>XuDiana</AssemblyName>
+    <RootNamespace>XuDiana_CN</RootNamespace>
+    <AssemblyName>XuDiana_CN</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -61,6 +61,7 @@
     <Compile Include="Modes\ChaseMode.cs" />
     <Compile Include="Modes\Combo.cs" />
     <Compile Include="Modes\Flee.cs" />
+    <Compile Include="Modes\GapCombo.cs" />
     <Compile Include="Modes\Harass.cs" />
     <Compile Include="Modes\Killsteal.cs" />
     <Compile Include="Modes\LaneClear.cs" />

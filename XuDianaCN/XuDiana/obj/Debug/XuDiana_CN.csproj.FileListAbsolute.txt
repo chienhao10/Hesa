@@ -1,0 +1,14 @@
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\HesaEngine.Core.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\SharpDX.DirectInput.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\SharpDX.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\HesaEngine.Wrapper.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\Runtime.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\SharpDX.xml
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\SharpDX.Direct3D9.xml
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\SharpDX.DirectInput.xml
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\XuDiana_CN.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\bin\Debug\XuDiana_CN.pdb
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\obj\Debug\XuDiana_CN.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\obj\Debug\XuDiana_CN.pdb
+C:\Users\SCH\Documents\GitHub\Hesa\XuDianaCN\XuDiana\obj\Debug\XuDiana_CN.csprojResolveAssemblyReference.cache
