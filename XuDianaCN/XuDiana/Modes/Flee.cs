@@ -19,10 +19,10 @@ namespace XuDiana.Modes
 
             foreach (var t in Target)
             {
-                if(fleeMenu.GetCheckbox("fleeE") && Target != null)
+                if (fleeMenu.GetCheckbox("fleeE") && Target != null)
                 {
                     //Chat.Print("Will FLEE on Enemy");
-                    if (q && QR > ObjectManager.Player.ManaPercent && t.IsValidTarget(Q.Range) && t.IsFacing(ObjectManager.Player))
+                    if (q && QR > ObjectManager.Player.ManaPercent && t.IsValidTarget(Q.Range) && t.IsInRange(Game.CursorPosition, 200))
                     {
                         Q.CastIfHitchanceEquals(t, HitChance.High);
                         //Chat.Print("fler1");
@@ -33,7 +33,7 @@ namespace XuDiana.Modes
                         }
                     }
 
-                    if (r && t.IsValidTarget(R.Range) && t.IsFacing(ObjectManager.Player))
+                    if (r && t.IsValidTarget(R.Range) && t.IsInRange(Game.CursorPosition, 200))
                     {
                         R.Cast(t);
                         //Chat.Print("fler");
@@ -57,7 +57,7 @@ namespace XuDiana.Modes
             {
                 if (fleeMenu.GetCheckbox("fleeM") && Target != null)
                 {
-                    if (q && QR > ObjectManager.Player.ManaPercent && m.IsValidTarget(Q.Range) && m.IsFacing(ObjectManager.Player))
+                    if (q && QR > ObjectManager.Player.ManaPercent && m.IsValidTarget(Q.Range) && m.IsInRange(Game.CursorPosition, 200))
                     {
                         Q.CastIfHitchanceEquals(m, HitChance.High);
                         //Chat.Print("mfler1");
@@ -68,7 +68,7 @@ namespace XuDiana.Modes
                         }
                     }
 
-                    if (r && m.IsValidTarget(R.Range) && m.IsFacing(ObjectManager.Player))
+                    if (r && m.IsValidTarget(R.Range) && m.IsInRange(Game.CursorPosition, 200))
                     {
                         R.Cast(m);
                         //Chat.Print("mfler");
@@ -86,7 +86,7 @@ namespace XuDiana.Modes
                         //Chat.Print("mflee");
                     }
                 }
-            }            
+            }
         }
     }
 }

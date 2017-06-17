@@ -11,3 +11,4 @@ C:\Users\SCH\Documents\GitHub\Hesa\XuDiana\XuDiana\bin\Debug\SharpDX.Direct3D9.x
 C:\Users\SCH\Documents\GitHub\Hesa\XuDiana\XuDiana\bin\Debug\SharpDX.DirectInput.xml
 C:\Users\SCH\Documents\GitHub\Hesa\XuDiana\XuDiana\obj\Debug\XuDiana.dll
 C:\Users\SCH\Documents\GitHub\Hesa\XuDiana\XuDiana\obj\Debug\XuDiana.pdb
+C:\Users\SCH\Documents\GitHub\Hesa\XuDiana\XuDiana\obj\Debug\XuDiana.csprojResolveAssemblyReference.cache
