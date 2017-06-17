@@ -11,7 +11,7 @@ namespace XuJhin
 {
     public class Main : IScript
     {
-        private readonly Champion champion = Champion.Twitch;
+        private readonly Champion champion = Champion.Jhin;
 
         public string Name => "Xu " + champion;
 
@@ -31,7 +31,7 @@ namespace XuJhin
 
         private void Game_OnGameLoaded()
         {
-            if (Player.ChampionName != "Twitch")
+            if (Player.ChampionName != "Jhin")
                 return;
 
             LoadMenu();
