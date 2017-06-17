@@ -14,7 +14,7 @@ namespace XuJhin.Modes
         private static readonly Item Refill = new Item(2031);
         private static readonly Item Jg = new Item(2032);
         private static readonly Item Cp = new Item(2033);
-        private static readonly SummonerSpells Heal = new Spell(50);
+        //private static readonly SummonerSpells Heal = new Spell(50);
 
 
         private static readonly string[] buffName = { "RegenerationPotion", "ItemMiniRegenPotion", "ItemCrystalFlask", "ItemCrystalFlaskJungle", "ItemDarkCrystalFlask" };
@@ -26,14 +26,14 @@ namespace XuJhin.Modes
             var ssheal = potMenu.GetSlider("ssheal");
             var Heal = potMenu.GetCheckbox("Heal");
 
-            if (ObjectManager.Player.GetSpellSlot("SummonerHeal") != SpellSlot.Unknown &&
+            /*if (ObjectManager.Player.GetSpellSlot("SummonerHeal") != SpellSlot.Unknown &&
                 ObjectManager.Player.GetSpellSlot("SummonerHeal").IsReady())
             {
                 if(Heal && ObjectManager.Player.HealthPercent < ssheal)
                 {
 
                 }
-            }
+            }*/
 
                 if (pot && !ObjectManager.Player.IsDead && !ObjectManager.Player.IsRecalling())
             {

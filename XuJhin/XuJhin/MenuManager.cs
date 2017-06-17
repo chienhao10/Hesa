@@ -85,8 +85,8 @@ namespace XuJhin
             potMenu = Home.AddSubMenu(prefix + "Heal");
             potMenu.Add(new MenuCheckbox("enable", "Enable Potions", true));
             potMenu.Add(new MenuSlider("hp", "Use at HP% ", 1, 100, 45));
-            potMenu.Add(new MenuCheckbox("Heal", "Use Heal", true));
-            potMenu.Add(new MenuSlider("ssheal", "Heal at HP% ", 1, 100, 45));
+            //potMenu.Add(new MenuCheckbox("Heal", "Use Heal", true));
+            //potMenu.Add(new MenuSlider("ssheal", "Heal at HP% ", 1, 100, 45));
 
             killstealMenu = Home.AddSubMenu(prefix + "KillSteal");
             killstealMenu.Add(new MenuCheckbox("enable", "Enable", true));
