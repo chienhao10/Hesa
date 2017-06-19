@@ -18,24 +18,26 @@ namespace XuJhin
         
         private static void Drawing_OnDraw(EventArgs args)
         {
+            var saferange = comboMenu.GetSlider("ksRange");
+
             if (!drawingMenu.GetCheckbox("enable")) return;
 
             if (drawingMenu.GetCheckbox("drawQ"))
             {
-                Drawing.DrawCircle(ObjectManager.Me.Position, Q.Range, Color.Yellow);
+                Drawing.DrawCircle(ObjectManager.Me.Position, Q.Range, Color.Yellow, 3);
             }
 
             if (drawingMenu.GetCheckbox("drawW"))
             {
-                Drawing.DrawCircle(ObjectManager.Me.Position, W.Range, Color.Yellow, 1);
+                Drawing.DrawCircle(ObjectManager.Me.Position, W.Range, Color.Yellow, 3);
             }
             if (drawingMenu.GetCheckbox("drawE"))
             {
-                Drawing.DrawCircle(ObjectManager.Me.Position, E.Range, Color.White);
+                Drawing.DrawCircle(ObjectManager.Me.Position, E.Range, Color.White, 3);
             }
             if (drawingMenu.GetCheckbox("drawR"))
             {
-                Drawing.DrawCircle(ObjectManager.Me.Position, R.Range, Color.Red, 3);
+                Drawing.DrawCircle(ObjectManager.Me.Position, saferange, Color.Red, 3);
             }
 
             Vector2 ScreenPosition = Drawing.WorldToScreen(ObjectManager.Player.Position);
@@ -43,13 +45,13 @@ namespace XuJhin
             string Wbuff = "W Marked";
             string Autow = "Auto W On";
 
-           if (drawingMenu.GetCheckbox("autoW"))
+           if (drawingMenu.GetCheckbox("drawAutoW") && autowMenu.GetCheckbox("autoW"))
             {
                 Drawing.DrawText(TextPosition, Color.Pink, Autow);
             }
-            if (drawingMenu.GetCheckbox("useWbuff"))
+            if (drawingMenu.GetCheckbox("drawWm") && comboMenu.GetCheckbox("useWbuff"))
             {
-                Drawing.DrawText(TextPosition - 30, Color.Pink, Wbuff);
+                Drawing.DrawText(TextPosition + 20, Color.Pink, Wbuff);
             }
         }
     }

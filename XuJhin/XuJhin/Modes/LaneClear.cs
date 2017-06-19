@@ -23,7 +23,7 @@ namespace XuJhin.Modes
                 if (m.IsValidTarget(Q.Range))
                     MinionAround++;
 
-                if (w && MinionAround >= 3 && m.IsValidTarget(W.Range))
+                if (w && m.IsValidTarget(W.Range))
                 {
                     W.PredictionCast(m, HitChance.High);
                     Chat.Print("lcw");

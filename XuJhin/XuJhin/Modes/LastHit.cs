@@ -10,21 +10,26 @@ namespace XuJhin.Modes
         public static void DoLastHit()
         {
             var q = lasthitMenu.GetCheckbox("useQ") && Q.IsReady();
-            var e = lasthitMenu.GetCheckbox("useE") && E.IsReady();
-            var minion = ObjectManager.MinionsAndMonsters.Enemy.Where(x => x.IsValidTarget(E.Range));
+            var w = lasthitMenu.GetCheckbox("useW") && W.IsReady();
+            var minion = ObjectManager.MinionsAndMonsters.Enemy.Where(x => x.IsValidTarget());
 
+            
             foreach (var m in minion)
             {
-                if (e && E.GetDamage(m) >= m.Health && m.IsValidTarget(E.Range))
+                if (m != null)
                 {
-                    E.Cast();
-                    Chat.Print("laste");
+                    if (w && W.GetDamage(m) >= m.Health && m.IsValidTarget(W.Range))
+                    {
+                        W.Cast(m);
+                        Chat.Print("laste");
+                    }
+                    if (q && Q.GetDamage(m) >= m.Health && m.IsValidTarget(Q.Range) || q && !ObjectManager.Player.CanAttack)
+                    {
+                        Q.Cast(m);
+                        Chat.Print("lastq");
+                    }
                 }
-                if (q && Q.GetDamage(m) >= m.Health && m.IsValidTarget(Q.Range))
-                {
-                    Q.Cast();
-                    Chat.Print("lastq");
-                }
+
             }
         }
     }

@@ -11,4 +11,3 @@ c:\users\sch\documents\visual studio 2015\Projects\XuJhin\XuJhin\bin\Debug\Sharp
 c:\users\sch\documents\visual studio 2015\Projects\XuJhin\XuJhin\bin\Debug\SharpDX.DirectInput.xml
 c:\users\sch\documents\visual studio 2015\Projects\XuJhin\XuJhin\obj\Debug\XuJhin.dll
 c:\users\sch\documents\visual studio 2015\Projects\XuJhin\XuJhin\obj\Debug\XuJhin.pdb
-c:\users\sch\documents\visual studio 2015\Projects\XuJhin\XuJhin\obj\Debug\XuJhin.csprojResolveAssemblyReference.cache

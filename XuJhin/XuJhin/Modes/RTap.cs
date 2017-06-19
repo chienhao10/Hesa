@@ -8,12 +8,14 @@ namespace XuJhin.Modes
     {
         public static void DoRTap()
         {
-            var r = comboMenu.GetCheckbox("useR") && R.IsReady();
-            var target = TargetSelector.GetTarget(R.Range, TargetSelector.DamageType.Physical);
+            var r = R.IsReady();
+            var target = TargetSelector.GetTarget(3500, TargetSelector.DamageType.Physical);
+            var ron = rMode.GetCheckbox($"ROn{target.ChampionName}");
 
-            if (target != null && ObjectManager.Player.HasBuff("JhinRShot"))
+
+            if (target != null && ObjectManager.Player.HasBuff("JhinRShot") && rMode.GetKeybind("rKey"))
             {
-                if (r && target.IsInRange(ObjectManager.Player, 3500))
+                if (r && ron)
                 {
                     R.PredictionCast(target, HitChance.High);
                     Chat.Print("rtap");

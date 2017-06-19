@@ -11,16 +11,13 @@ namespace XuJhin.Modes
         public static void DoHarass()
         {
             var q = harassMenu.GetCheckbox("useQ") && Q.IsReady();
-            var w = harassMenu.GetCheckbox("useW") && W.IsReady();
             var e = harassMenu.GetCheckbox("useE") && E.IsReady();
-            var won = harassMenu.GetCheckbox("WOnlist");
-            var wbuff = harassMenu.GetCheckbox("useWbuff");
 
-            var target = TargetSelector.GetTarget(Q.Range, TargetSelector.DamageType.Magical);
+            var target = TargetSelector.GetTarget(E.Range, TargetSelector.DamageType.Physical);
 
             if (target != null && !ObjectManager.Player.HasBuff("JhinRShot"))
             {
-                if (q && target.IsValidTarget(Q.Range))
+                if (q && target.IsValidTarget(Q.Range) || q && !ObjectManager.Player.CanAttack)
                 {
                     Q.Cast(target);
                     Chat.Print("hqcast");
@@ -32,24 +29,43 @@ namespace XuJhin.Modes
                 }
             }
 
-            if (w && !ObjectManager.Player.HasBuff("JhinRShot") && target != null)
+            var tryq = harassMenu.GetCheckbox("tryQ") && Q.IsReady();
+            var tryqtarget = TargetSelector.GetTarget(Q.Range + 300, TargetSelector.DamageType.Physical);
+
+            var minion = ObjectManager.MinionsAndMonsters.Enemy.Where(x => x.Distance(tryqtarget) >= 300 && x.IsValidTarget(Q.Range));
+
+            foreach (var m in minion)
             {
-                foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe))
+                if (m != null && tryq)
                 {
-                    if (enemy.IsValidTarget(W.Range))
+                    Q.Cast(m);
+                    Chat.Print("try q");
+                }
+            }
+
+            var w = harassMenu.GetCheckbox("useW") && W.IsReady();
+            var wbuff = harassMenu.GetCheckbox("useWbuff");
+            var won = harassMenu.GetCheckbox($"WOn{target.ChampionName}");
+            var wtarget = TargetSelector.GetTarget(W.Range, TargetSelector.DamageType.Physical);
+
+            if (wtarget != null)
+            {
+                if (w && !ObjectManager.Player.HasBuff("JhinRShot"))
+                {
+                    foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe && x.IsValidTarget(W.Range)))
                     {
                         if (won && wbuff)
                         {
                             if (enemy.HasBuff("jhinespotteddebuff"))
                             {
                                 W.PredictionCast(enemy);
-                                Chat.Print("hw buff1");
+                                Chat.Print("w buff1");
                             }
                         }
                         if (won && !wbuff)
                         {
                             W.PredictionCast(enemy);
-                            Chat.Print("hw buff2");
+                            Chat.Print("w buff2");
                         }
                     }
                 }

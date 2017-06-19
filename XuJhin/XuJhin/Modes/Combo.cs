@@ -4,6 +4,7 @@ using static XuJhin.MenuManager;
 using static XuJhin.Main;
 using System.Linq;
 using HesaEngine.SDK.GameObjects;
+using HesaEngine.SDK.Enums;
 
 namespace XuJhin.Modes
 {
@@ -11,41 +12,72 @@ namespace XuJhin.Modes
     {
         public static void DoCombo()
         {
-            var q = comboMenu.GetCheckbox("useQ") && Q.IsReady();
-            var w = comboMenu.GetCheckbox("useW") && W.IsReady();
-            var won = comboMenu.GetCheckbox("WOnlist");
-            var wbuff = comboMenu.GetCheckbox("useWbuff");
-            var e = comboMenu.GetCheckbox("useE") && E.IsReady();
-            var r = comboMenu.GetCheckbox("useR") && R.IsReady();
-            
-            var target = TargetSelector.GetTarget(Q.Range, TargetSelector.DamageType.Physical);
+            /*var r = comboMenu.GetCheckbox("useR") && R.IsReady();
             var rtarget = TargetSelector.GetTarget(GetRRange(), TargetSelector.DamageType.Physical);
-            
-            if (target != null && r && !rtarget.IsValidTarget(GetRRange()))
-            {
-                R.PredictionCast(rtarget);
-                Chat.Print("rcast");
-            }
 
-            if (target != null && !ObjectManager.Player.HasBuff("JhinRShot"))
+            if (rtarget != null && r && rtarget.IsValidTarget(3500))
             {
-                if (q && target.IsValidTarget(Q.Range))
+                if (rtarget.IsValidTarget(GetRRange())) return;
+
+                if (ObjectManager.Player.HasBuff("JhinRShot"))
                 {
-                    Q.Cast(target);
+                    //Orbwalker.Attack = false;
+                    //Main.Orbwalker.Move = false;
+                    R.Cast(rtarget);
+                    Chat.Print("rtarget");
+                }
+                else if (!ObjectManager.Player.HasBuff("JhinRShot"))
+                {
+                    R.Cast(rtarget);
+                    Chat.Print("ron");
+                }
+            }*/
+
+            /*if (rtarget != null && r && rtarget.IsValidTarget(3500) && !rtarget.IsValidTarget(GetRRange()))
+            {
+                if (ObjectManager.Player.HasBuff("JhinRShot"))
+                {
+                    //Orbwalker.Attack = false;
+                    //Main.Orbwalker.Move = false;
+                    R.Cast(rtarget);
+                    Chat.Print("rtarget");
+                }
+                else if (!ObjectManager.Player.HasBuff("JhinRShot"))
+                {
+                    R.Cast(rtarget);
+                    Chat.Print("ron");
+                }
+            }*/
+
+            var q = comboMenu.GetCheckbox("useQ") && Q.IsReady();
+            var e = comboMenu.GetCheckbox("useE") && E.IsReady();
+            var qtarget = TargetSelector.GetTarget(Q.Range, TargetSelector.DamageType.Physical);
+            var etarget = TargetSelector.GetTarget(E.Range, TargetSelector.DamageType.Physical);
+
+            if (qtarget != null && !ObjectManager.Player.HasBuff("JhinRShot"))
+            {
+                if (q && qtarget.IsValidTarget(Q.Range) || q && !ObjectManager.Player.CanAttack)
+                {
+                    Q.Cast(qtarget);
                     Chat.Print("qcast");
                 }
-                if (e && target.IsValidTarget(E.Range))
+                if (e && etarget.IsValidTarget(E.Range))
                 {
-                    E.PredictionCast(target, HitChance.High);
+                    E.Cast(etarget.Position);
                     Chat.Print("ecast");
                 }
             }
 
-            if (w && !ObjectManager.Player.HasBuff("JhinRShot") && target != null)
+            var wtarget = TargetSelector.GetTarget(W.Range, TargetSelector.DamageType.Physical);
+            var won = comboMenu.GetCheckbox($"WOn{wtarget.ChampionName}");
+            var wbuff = comboMenu.GetCheckbox("useWbuff");
+            var w = comboMenu.GetCheckbox("useW") && W.IsReady();
+
+            if (wtarget != null)
             {
-                foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe))
+                if (w && !ObjectManager.Player.HasBuff("JhinRShot"))
                 {
-                    if (enemy.IsValidTarget(W.Range))
+                    foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe && x.IsValidTarget(W.Range)))
                     {
                         if (won && wbuff)
                         {

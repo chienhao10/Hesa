@@ -21,32 +21,33 @@ namespace XuJhin
             comboMenu.Add(new MenuCheckbox("useWbuff", "Only W Marked", true));
             foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe))
             {
-                comboMenu.Add(new MenuCheckbox("WOnlist", "W On" + enemy.ChampionName,true));
+                comboMenu.Add(new MenuCheckbox($"WOn{enemy.ChampionName}", $"W On {enemy.ChampionName}", true));
             }
 
             comboMenu.Add(new MenuCheckbox("useE", "Use E", true));
-            comboMenu.Add(new MenuCheckbox("useR", "Use R", true));
-            comboMenu.Add(new MenuSlider("rRange", "Enemy In Range NOT R", 600, 1800, 1000));
+            //comboMenu.Add(new MenuCheckbox("useR", "Use R", true));
+            comboMenu.Add(new MenuSlider("rRange", "Enemy KS Search Range R", 600, 3500, 3500));
+            comboMenu.Add(new MenuSlider("ksRange", "Enemy KS In Range NOT R", 600, 3500, 600));
             comboMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 50));
 
             rMode = Home.AddSubMenu(prefix + "R Sniper");
             rMode.Add(new MenuKeybind("rKey", "R Tap Key", SharpDX.DirectInput.Key.G));
             foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe))
             {
-                rMode.Add(new MenuCheckbox("ROn", "R On" + enemy.ChampionName));
+                rMode.Add(new MenuCheckbox($"ROn{enemy.ChampionName}", $"R On {enemy.ChampionName}", true));
             }
 
             harassMenu = Home.AddSubMenu(prefix + "Harass");
             harassMenu.Add(new MenuCheckbox("useQ", "Use Q", true));
+            harassMenu.Add(new MenuCheckbox("tryQ", "Try Q Bounce Harass", true));
             harassMenu.Add(new MenuCheckbox("useW", "Use W", true));
             harassMenu.Add(new MenuCheckbox("useWbuff", "Only W Marked", true));
             harassMenu.Add(new MenuCheckbox("useE", "Use E", true));
-            harassMenu.Add(new MenuSlider("heStack", "Numer of Stacks Auto E ", 1, 6, 4));
             harassMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 50));
 
             foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe))
             {
-                harassMenu.Add(new MenuCheckbox("WOn" + enemy.ChampionName,"W On "));
+                harassMenu.Add(new MenuCheckbox($"WOn{enemy.ChampionName}", $"W On {enemy.ChampionName}", true));
             }
 
             laneclearMenu = Home.AddSubMenu(prefix + "Lane Clear");
@@ -65,7 +66,7 @@ namespace XuJhin
             autowMenu.Add(new MenuCheckbox("autoW", "Enable", false));
             foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe))
             {
-                autowMenu.Add(new MenuCheckbox("autoW" + enemy.ChampionName, "Auto W On "));
+                autowMenu.Add(new MenuCheckbox($"Won{enemy.ChampionName}", $"Auto W On {enemy.ChampionName}", true));
             }
 
             fleeMenu = Home.AddSubMenu(prefix + "Flee");

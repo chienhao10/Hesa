@@ -9,27 +9,30 @@ namespace XuJhin.Modes
     {
         public static void DoAutoW()
         {
-            var w = autowMenu.GetCheckbox("useW") && W.IsReady();
+            var w = autowMenu.GetCheckbox("autoW") && W.IsReady();
             var target = TargetSelector.GetTarget(W.Range, TargetSelector.DamageType.Physical);
+            var won = autowMenu.GetCheckbox($"Won{target.ChampionName}");
 
-            if (w && !ObjectManager.Player.HasBuff("JhinRShot") && target != null)
+            if (target != null)
             {
-                foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe))
+                if (w && won && !ObjectManager.Player.HasBuff("JhinRShot"))
                 {
-                    if (enemy.IsValidTarget(W.Range))
+                    foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe))
                     {
-                        if (w)
+                        if (enemy.IsValidTarget(W.Range))
                         {
-                            if (enemy.HasBuff("jhinespotteddebuff"))
+                            if (w)
                             {
-                                W.PredictionCast(enemy);
-                                Chat.Print("auto w");
+                                if (enemy.HasBuff("jhinespotteddebuff"))
+                                {
+                                    W.PredictionCast(enemy);
+                                    Chat.Print("auto w");
+                                }
                             }
                         }
                     }
                 }
             }
-
         }
     }
 }

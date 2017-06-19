@@ -47,7 +47,7 @@ namespace XuJhin
         }
 
 
-        int rRange = 1000;
+        int rRange = 3500;
 
         private void Game_OnTick()
         {
@@ -87,9 +87,13 @@ namespace XuJhin
             {
                 RTap.DoRTap();
             }
-            AutoW.DoAutoW();
-            Pots.DoPots();
-            
+            if (potMenu.GetCheckbox("enable"))
+            {
+                //Pots.DoPots();
+            }
+            //AutoW.DoAutoW();
+
+
             if (rRange == GetRRange()) return;
             rRange = GetRRange();
             R.Range = rRange;
