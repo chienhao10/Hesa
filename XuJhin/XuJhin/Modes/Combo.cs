@@ -22,13 +22,13 @@ namespace XuJhin.Modes
                     Main.Orbwalker.SetMovement(false);
                     Main.Orbwalker.SetAttack(false);
                     R.Cast(rtarget);
-                    Chat.Print("rtarget");
+                    //Chat.Print("rtarget");
                     return;
                 }
                 else
                 {
                     R.Cast(rtarget);
-                    Chat.Print("ron");
+                    //Chat.Print("ron");
                 }
             }
 
@@ -41,14 +41,14 @@ namespace XuJhin.Modes
 
             if (qtarget.IsValidTarget() && !ObjectManager.Player.HasBuff("JhinRShot") && q)
             {
-                Chat.Print("Q");
+                //Chat.Print("Q");
                 Q.Cast(qtarget);
             }
             var e = comboMenu.GetCheckbox("useE") && E.IsReady();
             var etarget = TargetSelector.GetTarget(E.Range, TargetSelector.DamageType.Physical);
             if (e && etarget.IsValidTarget(E.Range) && !ObjectManager.Player.HasBuff("JhinRShot"))
             {
-                Chat.Print("E");
+                //Chat.Print("E");
                 E.Cast(etarget.Position);
             }
             
@@ -61,12 +61,12 @@ namespace XuJhin.Modes
                 if (w && wbuff && enemy.HasBuff("jhinespotteddebuff") )
                 {
                     W.PredictionCast(enemy);
-                    Chat.Print("w buff1");
+                   // Chat.Print("w buff1");
                 }
                 if (w && !wbuff)
                 {
                     W.PredictionCast(enemy);
-                    Chat.Print("w buff2");
+                   // Chat.Print("w buff2");
                 }
             }
         }

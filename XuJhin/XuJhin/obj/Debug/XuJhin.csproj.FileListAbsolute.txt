@@ -11,3 +11,17 @@ c:\users\sch\documents\visual studio 2015\Projects\XuJhin\XuJhin\bin\Debug\Sharp
 c:\users\sch\documents\visual studio 2015\Projects\XuJhin\XuJhin\bin\Debug\SharpDX.DirectInput.xml
 c:\users\sch\documents\visual studio 2015\Projects\XuJhin\XuJhin\obj\Debug\XuJhin.dll
 c:\users\sch\documents\visual studio 2015\Projects\XuJhin\XuJhin\obj\Debug\XuJhin.pdb
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\bin\Debug\XuJhin.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\bin\Debug\XuJhin.pdb
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\bin\Debug\HesaEngine.Core.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\bin\Debug\SharpDX.DirectInput.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\bin\Debug\SharpDX.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\bin\Debug\HesaEngine.Wrapper.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\bin\Debug\Runtime.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\bin\Debug\SharpDX.xml
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\bin\Debug\SharpDX.Direct3D9.xml
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\bin\Debug\SharpDX.DirectInput.xml
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\obj\Debug\XuJhin.csprojResolveAssemblyReference.cache
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\obj\Debug\XuJhin.dll
+C:\Users\SCH\Documents\GitHub\Hesa\XuJhin\XuJhin\obj\Debug\XuJhin.pdb

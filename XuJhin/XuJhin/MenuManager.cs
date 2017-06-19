@@ -25,17 +25,17 @@ namespace XuJhin
             }
 
             comboMenu.Add(new MenuCheckbox("useE", "Use E", true));
-            comboMenu.Add(new MenuCheckbox("useR", "Use R", true));
+            //comboMenu.Add(new MenuCheckbox("useR", "Use R", true));
             comboMenu.Add(new MenuSlider("rRange", "Enemy Search Range R", 600, 3500, 3500));
             comboMenu.Add(new MenuSlider("ksRange", "Enemy In Range NOT R", 600, 3500, 600));
             comboMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 50));
 
-            rMode = Home.AddSubMenu(prefix + "R Sniper");
+            /*rMode = Home.AddSubMenu(prefix + "R Sniper");
             rMode.Add(new MenuKeybind("rKey", "R Tap Key", SharpDX.DirectInput.Key.G));
             foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe))
             {
                 rMode.Add(new MenuCheckbox($"ROn{enemy.ChampionName}", $"R On {enemy.ChampionName}", true));
-            }
+            }*/
 
             harassMenu = Home.AddSubMenu(prefix + "Harass");
             harassMenu.Add(new MenuCheckbox("useQ", "Use Q", true));
@@ -82,9 +82,9 @@ namespace XuJhin
             drawingMenu.Add(new MenuCheckbox("drawE", "Draw E", true));
             drawingMenu.Add(new MenuCheckbox("drawR", "Draw NO R Range", true));
 
-            potMenu = Home.AddSubMenu(prefix + "Heal");
+            /*potMenu = Home.AddSubMenu(prefix + "Heal");
             potMenu.Add(new MenuCheckbox("enable", "Enable Potions", true));
-            potMenu.Add(new MenuSlider("hp", "Use at HP% ", 1, 100, 45));
+            potMenu.Add(new MenuSlider("hp", "Use at HP% ", 1, 100, 45));*/
             //potMenu.Add(new MenuCheckbox("Heal", "Use Heal", true));
             //potMenu.Add(new MenuSlider("ssheal", "Heal at HP% ", 1, 100, 45));
 

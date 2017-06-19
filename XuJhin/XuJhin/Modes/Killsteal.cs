@@ -19,13 +19,13 @@ namespace XuJhin.Modes
                     if (q && Q.GetDamage(enemy) >= enemy.Health && enemy.IsValidTarget(Q.Range))
                     {
                         Q.Cast(enemy);
-                        Chat.Print("ksq");
+                        //Chat.Print("ksq");
                     }
 
                     if (r && R.GetDamage(enemy) >= enemy.Health && enemy.IsValidTarget(R.Range) && !enemy.IsValidTarget(saferange))
                     {
                         R.Cast(enemy);
-                        Chat.Print("ksr");
+                        //Chat.Print("ksr");
                     }
                        
                 }

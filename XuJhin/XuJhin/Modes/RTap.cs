@@ -18,7 +18,7 @@ namespace XuJhin.Modes
                 if (r && ron)
                 {
                     R.PredictionCast(target, HitChance.High);
-                    Chat.Print("rtap");
+                    //Chat.Print("rtap");
                 }
             }
         }

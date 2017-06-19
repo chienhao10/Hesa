@@ -21,12 +21,12 @@ namespace XuJhin.Modes
                     if (w && W.GetDamage(m) >= m.Health && m.IsValidTarget(W.Range))
                     {
                         W.Cast(m);
-                        Chat.Print("laste");
+                       // Chat.Print("laste");
                     }
                     if (q && Q.GetDamage(m) >= m.Health && m.IsValidTarget(Q.Range) || q && !ObjectManager.Player.CanAttack)
                     {
                         Q.Cast(m);
-                        Chat.Print("lastq");
+                       // Chat.Print("lastq");
                     }
                 }
 
