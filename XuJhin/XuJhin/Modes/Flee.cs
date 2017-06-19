@@ -16,7 +16,7 @@ namespace XuJhin.Modes
 
             if (w && Target.HasBuff("jhinespotteddebuff"))
             {
-                W.PredictionCast(Target, HitChance.VeryHigh);
+                W.PredictionCast(Target);
             }
 
             if (e && Target.IsValidTarget(E.Range))

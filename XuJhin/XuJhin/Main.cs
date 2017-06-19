@@ -43,7 +43,7 @@ namespace XuJhin
             LoadDrawings();
 
             Game.OnTick += Game_OnTick;
-            Chat.Print(" Xu Jhin Loaded");
+            Chat.Print(" Xu Jhin Loaded WW");
         }
 
 
@@ -56,7 +56,6 @@ namespace XuJhin
             if (killstealMenu.GetCheckbox("enable"))
             {
                 Killsteal.DoKS();
-                Items.DoItems();
             }
 
 
@@ -91,7 +90,10 @@ namespace XuJhin
             {
                 //Pots.DoPots();
             }
-            //AutoW.DoAutoW();
+            if (autowMenu.GetCheckbox("autoW"))
+            {
+                AutoW.DoAutoW();
+            }
 
 
             if (rRange == GetRRange()) return;

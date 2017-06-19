@@ -19,15 +19,15 @@ namespace XuJhin
             comboMenu.Add(new MenuCheckbox("useQ", "Use Q", true));
             comboMenu.Add(new MenuCheckbox("useW", "Use W", true));
             comboMenu.Add(new MenuCheckbox("useWbuff", "Only W Marked", true));
-            foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe))
+            foreach (var enemy in ObjectManager.Heroes.Enemies) //you are checking enemy champs.. .Me and .Ally are not enemies and will never be.
             {
                 comboMenu.Add(new MenuCheckbox($"WOn{enemy.ChampionName}", $"W On {enemy.ChampionName}", true));
             }
 
             comboMenu.Add(new MenuCheckbox("useE", "Use E", true));
-            //comboMenu.Add(new MenuCheckbox("useR", "Use R", true));
-            comboMenu.Add(new MenuSlider("rRange", "Enemy KS Search Range R", 600, 3500, 3500));
-            comboMenu.Add(new MenuSlider("ksRange", "Enemy KS In Range NOT R", 600, 3500, 600));
+            comboMenu.Add(new MenuCheckbox("useR", "Use R", true));
+            comboMenu.Add(new MenuSlider("rRange", "Enemy Search Range R", 600, 3500, 3500));
+            comboMenu.Add(new MenuSlider("ksRange", "Enemy In Range NOT R", 600, 3500, 600));
             comboMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 50));
 
             rMode = Home.AddSubMenu(prefix + "R Sniper");
@@ -64,7 +64,7 @@ namespace XuJhin
 
             autowMenu = Home.AddSubMenu(prefix + "Auto W");
             autowMenu.Add(new MenuCheckbox("autoW", "Enable", false));
-            foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe))
+            foreach (var enemy in ObjectManager.Heroes.Enemies)
             {
                 autowMenu.Add(new MenuCheckbox($"Won{enemy.ChampionName}", $"Auto W On {enemy.ChampionName}", true));
             }
@@ -81,7 +81,6 @@ namespace XuJhin
             drawingMenu.Add(new MenuCheckbox("drawAutoW", "Draw Auto W Status", true));
             drawingMenu.Add(new MenuCheckbox("drawE", "Draw E", true));
             drawingMenu.Add(new MenuCheckbox("drawR", "Draw NO R Range", true));
-            //drawingMenu.Add(new MenuCheckbox("drawMode", "Draw Q Count Down", true));
 
             potMenu = Home.AddSubMenu(prefix + "Heal");
             potMenu.Add(new MenuCheckbox("enable", "Enable Potions", true));
