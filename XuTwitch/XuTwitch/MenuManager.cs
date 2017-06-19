@@ -73,6 +73,7 @@ namespace XuTwitch
             miscMenu = Home.AddSubMenu(prefix + "Misc");
             //miscMenu.Add(new MenuCheckbox("recallq", "Recall Q", true));
             miscMenu.Add(new MenuCheckbox("item", "Use Items", true));
+            miscMenu.Add(new MenuCheckbox("QSS", "Auto QSS", true));
             miscMenu.Add(new MenuCheckbox("orb", "Use Orbs/Trinkets In Combo", true));
             miscMenu.Add(new MenuCheckbox("agW", "AntiGapclose W", true));
             miscMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 30));

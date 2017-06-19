@@ -5,7 +5,7 @@ namespace XuDiana
 {
     public static class MenuManager
     {
-        public static Menu Home, comboMenu, chaseMenu, harassMenu, autoharassMenu, laneclearMenu, lasthitMenu, fleeMenu, drawingMenu, miscMenu, killstealMenu;
+        public static Menu Home, comboMenu, chaseMenu, harassMenu, autoharassMenu, laneclearMenu, lasthitMenu, fleeMenu, potMenu, drawingMenu, miscMenu, killstealMenu;
         
         private static string prefix = " - ";
 
@@ -64,6 +64,13 @@ namespace XuDiana
             fleeMenu.Add(new MenuCheckbox("fleeE", "Flee On Enemy", true));
             fleeMenu.Add(new MenuCheckbox("fleeM", "Flee On Minions/Mobs", true));
 
+            potMenu = Home.AddSubMenu(prefix + "Heal");
+            potMenu.Add(new MenuCheckbox("enable", "Enable Potions", true));
+            potMenu.Add(new MenuSlider("hp", "Use at HP% ", 1, 100, 45));
+            //potMenu.Add(new MenuCheckbox("Heal", "Use Heal", true));
+            //potMenu.Add(new MenuSlider("ssheal", "Heal at HP% ", 1, 100, 45));
+
+
             drawingMenu = Home.AddSubMenu(prefix + "Drawings");
             drawingMenu.Add(new MenuCheckbox("enable", "Enable", true));
             drawingMenu.Add(new MenuCheckbox("drawQ", "Draw Q", true));
@@ -80,6 +87,9 @@ namespace XuDiana
             killstealMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 10));
 
             miscMenu = Home.AddSubMenu(prefix + "Misc");
+            miscMenu.Add(new MenuCheckbox("item", "Use Items", true));
+            miscMenu.Add(new MenuCheckbox("QSS", "Auto QSS", true));
+            miscMenu.Add(new MenuCheckbox("orb", "Use Orbs/Trinkets In Combo", true));
             miscMenu.Add(new MenuCheckbox("agW", "AntiGapclose W", true));
             miscMenu.Add(new MenuCheckbox("agE", "AntiGapclose E", true));
             miscMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 30));

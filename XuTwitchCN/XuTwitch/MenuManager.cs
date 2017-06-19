@@ -72,6 +72,7 @@ namespace XuTwitch
             miscMenu = Home.AddSubMenu(prefix + "杂项");
             //miscMenu.Add(new MenuCheckbox("recallq", "Recall Q", true));
             miscMenu.Add(new MenuCheckbox("item", "使用物品", true));
+            miscMenu.Add(new MenuCheckbox("QSS", "自动净化", true));
             miscMenu.Add(new MenuCheckbox("orb", "连招和逃跑时使用蓝色饰品/眼", true));
             miscMenu.Add(new MenuCheckbox("agW", "防突进 W", true));
             miscMenu.Add(new MenuSlider("mana", "蓝量高于 ", 10, 100, 30));

@@ -9,6 +9,5 @@ C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\Runtime.dll
 C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\SharpDX.xml
 C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\SharpDX.Direct3D9.xml
 C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\bin\Debug\SharpDX.DirectInput.xml
-C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\obj\Debug\Xu图奇.csprojResolveAssemblyReference.cache
 C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\obj\Debug\Xu图奇.dll
 C:\Users\SCH\Documents\GitHub\Hesa\XuTwitchCN\XuTwitch\obj\Debug\Xu图奇.pdb

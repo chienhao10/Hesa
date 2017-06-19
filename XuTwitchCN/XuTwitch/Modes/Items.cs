@@ -34,7 +34,10 @@ namespace XuTwitch.Modes
                         BOTRK.Cast(enemy);
                         Bilgewater.Cast(enemy);
                     }
-                if (ObjectManager.Player.HasBuffOfType(BuffType.Stun) || ObjectManager.Player.HasBuffOfType(BuffType.Fear) || ObjectManager.Player.HasBuffOfType(BuffType.Charm) || ObjectManager.Player.HasBuffOfType(BuffType.Taunt) || ObjectManager.Player.HasBuffOfType(BuffType.Blind))
+
+            var qss = miscMenu.GetCheckbox("QSS");
+
+            if (qss && ObjectManager.Player.HasBuffOfType(BuffType.Stun) || ObjectManager.Player.HasBuffOfType(BuffType.Fear) || ObjectManager.Player.HasBuffOfType(BuffType.Charm) || ObjectManager.Player.HasBuffOfType(BuffType.Taunt) || ObjectManager.Player.HasBuffOfType(BuffType.Blind))
                 {
                     if (Mercurial.IsReady() && Mercurial.IsOwned())
                     {

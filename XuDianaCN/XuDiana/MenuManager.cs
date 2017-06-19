@@ -5,7 +5,7 @@ namespace XuDiana
 {
     public static class MenuManager
     {
-        public static Menu Home, comboMenu, chaseMenu, harassMenu, autoharassMenu, laneclearMenu, lasthitMenu, fleeMenu, drawingMenu, miscMenu, killstealMenu;
+        public static Menu Home, comboMenu, chaseMenu, harassMenu, autoharassMenu, laneclearMenu, lasthitMenu, fleeMenu, potMenu, drawingMenu, miscMenu, killstealMenu;
         
         private static string prefix = " - ";
 
@@ -64,6 +64,12 @@ namespace XuDiana
             fleeMenu.Add(new MenuCheckbox("fleeE", "利用敌人逃跑", true));
             fleeMenu.Add(new MenuCheckbox("fleeM", "利用小兵/野怪逃跑", true));
 
+            potMenu = Home.AddSubMenu(prefix + "治疗");
+            potMenu.Add(new MenuCheckbox("enable", "启用药水", true));
+            potMenu.Add(new MenuSlider("hp", "HP%低于时使用 ", 1, 100, 45));
+            //potMenu.Add(new MenuCheckbox("Heal", "Use Heal", true));
+            //potMenu.Add(new MenuSlider("ssheal", "Heal at HP% ", 1, 100, 45));
+
             drawingMenu = Home.AddSubMenu(prefix + "线圈");
             drawingMenu.Add(new MenuCheckbox("enable", "启用", true));
             drawingMenu.Add(new MenuCheckbox("drawQ", "显示 Q", true));
@@ -80,6 +86,9 @@ namespace XuDiana
             killstealMenu.Add(new MenuSlider("mana", "蓝量必须 >= ", 10, 100, 10));
 
             miscMenu = Home.AddSubMenu(prefix + "杂项");
+            miscMenu.Add(new MenuCheckbox("item", "使用物品", true));
+            miscMenu.Add(new MenuCheckbox("QSS", "自动净化", true));
+            miscMenu.Add(new MenuCheckbox("orb", "连招/逃跑时使用蓝饰品/眼", true));
             miscMenu.Add(new MenuCheckbox("agW", "防突进 W", true));
             miscMenu.Add(new MenuCheckbox("agE", "防突进 E", true));
             /*miscMenu.Add(new MenuSlider("mana", "蓝量必须 >= ", 10, 100, 30));
