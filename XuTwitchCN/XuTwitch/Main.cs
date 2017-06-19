@@ -13,11 +13,11 @@ namespace XuTwitch
     {
         private readonly Champion champion = Champion.Twitch;
 
-        public string Name => "Xu 图奇";
+        public string Name => "Xu " + champion;
 
         public string Version => "0.0.1";
 
-        public string Author => "徐211";
+        public string Author => "Xu211";
 
         public AIHeroClient Player => ObjectManager.Player;
         public static PredictionInput QPred, WPred, EPred, RPred;
@@ -62,6 +62,7 @@ namespace XuTwitch
             if (Orbwalker.ActiveMode == (OrbwalkingMode.Combo) && mana >= comboMenu.GetSlider("mana"))
             {
                 Combo.DoCombo();
+                Items.DoItems();
             }
 
             if (Orbwalker.ActiveMode == (OrbwalkingMode.Harass) && mana >= harassMenu.GetSlider("mana"))
@@ -78,8 +79,9 @@ namespace XuTwitch
             if (Orbwalker.ActiveMode == (OrbwalkingMode.Flee))
             {
                 Flee.DoFlee();
+                Items.DoItems();
             }
-
+            Pots.DoPots();
             
             if (qRange == GetQRange()) return;
             qRange = GetQRange();

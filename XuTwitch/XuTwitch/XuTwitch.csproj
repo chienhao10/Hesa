@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DrawingManager.cs" />
+    <Compile Include="Modes\Items.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="MenuManager.cs" />
     <Compile Include="Modes\AntiGapcloser.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Modes\Killsteal.cs" />
     <Compile Include="Modes\LaneClear.cs" />
     <Compile Include="Modes\LastHit.cs" />
+    <Compile Include="Modes\Pots.cs" />
     <Compile Include="Pred.cs" />
     <Compile Include="SpellManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,7 +5,7 @@ namespace XuTwitch
 {
     public static class MenuManager
     {
-        public static Menu Home, comboMenu, chaseMenu, harassMenu, autoharassMenu, laneclearMenu, lasthitMenu, fleeMenu, drawingMenu, miscMenu, killstealMenu;
+        public static Menu Home, comboMenu, chaseMenu, harassMenu, autoharassMenu, laneclearMenu, lasthitMenu, fleeMenu, potMenu, drawingMenu, miscMenu, killstealMenu;
         
         private static string prefix = " - ";
 
@@ -24,7 +24,7 @@ namespace XuTwitch
             comboMenu.Add(new MenuCheckbox("useR", "使用 R", false));
             comboMenu.Add(new MenuSlider("mana", "蓝量高于 ", 10, 100, 50));
 
-            harassMenu = Home.AddSubMenu(prefix + "Harass");
+            harassMenu = Home.AddSubMenu(prefix + "骚扰");
             harassMenu.Add(new MenuCheckbox("useW", "使用 W", true));
             harassMenu.Add(new MenuCheckbox("useE", "使用 E", true));
             harassMenu.Add(new MenuSlider("heStack", "毒层数使用 E ", 1, 6, 4));
@@ -49,6 +49,12 @@ namespace XuTwitch
             fleeMenu.Add(new MenuCheckbox("useQ", "使用 Q", true));
             fleeMenu.Add(new MenuCheckbox("useW", "使用 W", false));
 
+            potMenu = Home.AddSubMenu(prefix + "治疗");
+            potMenu.Add(new MenuCheckbox("enable", "启用药水", true));
+            potMenu.Add(new MenuSlider("hp", "HP% 低于时使用", 1, 100, 45));
+            //potMenu.Add(new MenuCheckbox("Heal", "Use Heal", true));
+            //potMenu.Add(new MenuSlider("ssheal", "Heal at HP% ", 1, 100, 45));
+
             drawingMenu = Home.AddSubMenu(prefix + "线圈");
             drawingMenu.Add(new MenuCheckbox("enable", "启用", true));
             drawingMenu.Add(new MenuCheckbox("drawQ", "显示 Q", true));
@@ -65,6 +71,8 @@ namespace XuTwitch
 
             miscMenu = Home.AddSubMenu(prefix + "杂项");
             //miscMenu.Add(new MenuCheckbox("recallq", "Recall Q", true));
+            miscMenu.Add(new MenuCheckbox("item", "使用物品", true));
+            miscMenu.Add(new MenuCheckbox("orb", "连招和逃跑时使用蓝色饰品/眼", true));
             miscMenu.Add(new MenuCheckbox("agW", "防突进 W", true));
             miscMenu.Add(new MenuSlider("mana", "蓝量高于 ", 10, 100, 30));
             //miscMenu.Add(new MenuCheckbox("save", "Always Save Mana For E", true));
