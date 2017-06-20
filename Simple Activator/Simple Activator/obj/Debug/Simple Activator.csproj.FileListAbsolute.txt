@@ -1,0 +1,13 @@
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\bin\Debug\Simple Activator.dll
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\bin\Debug\Simple Activator.pdb
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\bin\Debug\HesaEngine.Core.dll
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\bin\Debug\SharpDX.DirectInput.dll
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\bin\Debug\SharpDX.dll
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\bin\Debug\SharpDX.Direct3D9.dll
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\bin\Debug\HesaEngine.Wrapper.dll
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\bin\Debug\Runtime.dll
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\bin\Debug\SharpDX.xml
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\bin\Debug\SharpDX.DirectInput.xml
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\bin\Debug\SharpDX.Direct3D9.xml
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\obj\Debug\Simple Activator.dll
+c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\obj\Debug\Simple Activator.pdb
