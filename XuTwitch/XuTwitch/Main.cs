@@ -81,8 +81,10 @@ namespace XuTwitch
                 Flee.DoFlee();
                 Items.DoItems();
             }
+            //Items.DoQss();
             Pots.DoPots();
-            
+            SS.DoSmite();
+            SS.DoHeal();
             if (qRange == GetQRange()) return;
             qRange = GetQRange();
             Q.Range = qRange;

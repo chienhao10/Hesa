@@ -17,7 +17,7 @@ namespace XuTwitch.Modes
             var w = laneclearMenu.GetCheckbox("useW") && W.IsReady();
             var r = laneclearMenu.GetCheckbox("useR") && R.IsReady();
             var e = laneclearMenu.GetCheckbox("useE") && E.IsReady();
-            //var le = laneclearMenu.GetSlider("leStack");
+            var le = laneclearMenu.GetSlider("leStack");
             var lcn = laneclearMenu.GetSlider("eNumber");
 
             var minion = ObjectManager.MinionsAndMonsters.Enemy.Where(x => x.IsValidTarget());
@@ -44,12 +44,11 @@ namespace XuTwitch.Modes
                     R.Cast(m);
                     //Chat.Print("lcr");
                 }
-                if (e && MinionAround >= 3 && m.IsValidTarget(E.Range) && minionwilldie >= lcn)
+                if (e && MinionAround >= 3 && m.IsValidTarget(E.Range) && GetEStackCount(m) > le || minionwilldie >= lcn)
                 {
-                    {
                         E.Cast();
+
                         //Chat.Print("lce");
-                    }
                     /*if (GetEStackCount(m) >= le)
                     {
                         E.Cast();

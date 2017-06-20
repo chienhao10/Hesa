@@ -24,24 +24,28 @@ namespace XuTwitch.Modes
             var pot = potMenu.GetCheckbox("enable");
             var hp = potMenu.GetSlider("hp");
 
-                if (pot && !ObjectManager.Player.IsDead && !ObjectManager.Player.IsRecalling())
+            if (pot && !ObjectManager.Player.IsDead && !ObjectManager.Player.IsRecalling() && ObjectManager.Player.HasBuffOfType(BuffType.Heal));
             {
-                if (Red.IsOwned() && Red.IsReady() && ObjectManager.Player.HealthPercent < hp)
+                if (pot && !ObjectManager.Player.IsDead && !ObjectManager.Player.IsRecalling())
                 {
-                    Red.Cast();
+                    if (Red.IsOwned() && Red.IsReady() && ObjectManager.Player.HealthPercent < hp)
+                    {
+                        Red.Cast();
+                    }
+                    else if (Bis.IsOwned() && Bis.IsReady() && ObjectManager.Player.HealthPercent < hp)
+                    {
+                        Bis.Cast();
+                    }
+                    else if (Refill.IsOwned() && Refill.IsReady() && ObjectManager.Player.HealthPercent < hp)
+                    {
+                        Refill.Cast();
+                    }
+                    else if (Cp.IsOwned() && Cp.IsReady() && ObjectManager.Player.HealthPercent < hp)
+                    {
+                        Cp.Cast();
+                    }
                 }
-                else if (Bis.IsOwned() && Bis.IsReady() && ObjectManager.Player.HealthPercent < hp)
-                {
-                    Bis.Cast();
-                }
-                else if (Refill.IsOwned() && Refill.IsReady() && ObjectManager.Player.HealthPercent < hp)
-                {
-                    Refill.Cast();
-                }
-                else if (Cp.IsOwned() && Cp.IsReady() && ObjectManager.Player.HealthPercent < hp)
-                {
-                    Cp.Cast();
-                }
+
             }
         }
     }

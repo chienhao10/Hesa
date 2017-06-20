@@ -11,6 +11,8 @@ namespace XuTwitch
 {
     public static class DrawingManager
     {
+        private static Spell SmiteSpell { get; set; }
+
         public static void LoadDrawings()
         {
             Drawing.OnDraw += Drawing_OnDraw;
@@ -38,6 +40,16 @@ namespace XuTwitch
                 Drawing.DrawCircle(ObjectManager.Me.Position, R.Range, Color.Red);
             }
 
+            var smiteSlot = ObjectManager.Player.Spellbook.Spells.FirstOrDefault(x => x.SpellData.Name.ToLower().Contains("smite"));
+            if (smiteSlot != null)
+            {
+                SmiteSpell = new Spell(smiteSlot.Slot, 570f, TargetSelector.DamageType.True);
+            }
+
+            if (drawingMenu.GetCheckbox("drawSmite"))
+            {
+                Drawing.DrawCircle(ObjectManager.Me.Position, SmiteSpell.Range, Color.GhostWhite);
+            }
             Vector2 ScreenPosition = Drawing.WorldToScreen(ObjectManager.Player.Position);
             Vector2 TextPosition = new Vector2(ScreenPosition.X, ScreenPosition.Y);
             string Chase = "Chase Mode";

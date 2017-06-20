@@ -60,10 +60,10 @@ namespace XuTwitch.Modes
                     foreach (var target in Enemys)
                     {
                         var lastPos = target.Position;
-                        if (!target.IsVisible)
+                        if (!target.IsVisible && orb && (ObjectManager.Player.Position - lastPos).Length() <= 300)
                         {
                         Chat.Print("cant see");
-                            if (orb && (ObjectManager.Player.Position - lastPos).Length() <= 3500)
+                            if (orb)
                             {
                             Chat.Print("can see");
                             blue.Cast(lastPos);

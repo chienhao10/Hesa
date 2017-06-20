@@ -1,12 +1,16 @@
 ﻿using HesaEngine.SDK;
+using HesaEngine.SDK.Enums;
 using SharpDX;
 
 namespace XuTwitch
 {
     public static class MenuManager
     {
-        public static Menu Home, comboMenu, chaseMenu, harassMenu, autoharassMenu, laneclearMenu, lasthitMenu, fleeMenu, potMenu, drawingMenu, miscMenu, killstealMenu;
-        
+        public static Menu Home, comboMenu, chaseMenu, harassMenu, autoharassMenu, laneclearMenu, lasthitMenu, fleeMenu, potMenu, ssMenu, drawingMenu, miscMenu, killstealMenu;
+
+        public static bool IsSummonersRift => Game.MapId == GameMapId.SummonersRift;
+        public static bool IsTwistedTreeline => Game.MapId == GameMapId.TwistedTreeline;
+
         private static string prefix = " - ";
 
         public static void LoadMenu()
@@ -49,11 +53,31 @@ namespace XuTwitch
             fleeMenu.Add(new MenuCheckbox("useQ", "Use Q", true));
             fleeMenu.Add(new MenuCheckbox("useW", "Use W", false));
 
-            potMenu = Home.AddSubMenu(prefix + "Heal");
+            potMenu = Home.AddSubMenu(prefix + "Potion");
             potMenu.Add(new MenuCheckbox("enable", "Enable Potions", true));
             potMenu.Add(new MenuSlider("hp", "Use at HP% ", 1, 100, 45));
-            //potMenu.Add(new MenuCheckbox("Heal", "Use Heal", true));
-            //potMenu.Add(new MenuSlider("ssheal", "Heal at HP% ", 1, 100, 45));
+
+            ssMenu = Home.AddSubMenu(prefix + "Summoner Spells");
+            ssMenu.Add(new MenuCheckbox("Heal", "Use Heal", true));
+            ssMenu.Add(new MenuSlider("ssheal", "Heal at HP% ", 1, 100, 45));
+            ssMenu.Add(new MenuCheckbox("Smite", "Use Smite", true));
+            ssMenu.Add(new MenuCheckbox("SmiteKS", "Smite KS", true));
+            if (IsSummonersRift)
+            {
+                var small = ssMenu.AddSubMenu("Small Mobs");
+                small.Add(new MenuCheckbox("SRU_Gromp", "Gromp").SetValue(false));
+                small.Add(new MenuCheckbox("SRU_Razorbeak", "Raptors").SetValue(false));
+                small.Add(new MenuCheckbox("Sru_Crab", "Crab").SetValue(false));
+                small.Add(new MenuCheckbox("SRU_Krug", "Krug").SetValue(false));
+                small.Add(new MenuCheckbox("SRU_Murkwolf", "Wolves").SetValue(false));
+
+                var big = ssMenu.AddSubMenu("Big Mobs");
+                big.Add(new MenuCheckbox("SRU_Baron", "Baron Nashor").SetValue(true));
+                big.Add(new MenuCheckbox("SRU_RiftHerald", "Rift Herald").SetValue(true));
+                big.Add(new MenuCheckbox("SRU_Dragon", "Dragons").SetValue(true));
+                big.Add(new MenuCheckbox("SRU_Blue", "Blue Buff").SetValue(true));
+                big.Add(new MenuCheckbox("SRU_Red", "Red Buff").SetValue(true));
+            }
 
 
             drawingMenu = Home.AddSubMenu(prefix + "Drawings");
@@ -62,6 +86,7 @@ namespace XuTwitch
             drawingMenu.Add(new MenuCheckbox("drawW", "Draw W", true));
             drawingMenu.Add(new MenuCheckbox("drawE", "Draw E", true));
             drawingMenu.Add(new MenuCheckbox("drawR", "Draw R", true));
+            drawingMenu.Add(new MenuCheckbox("drawSmite", "Draw Smite Range", true));
             //drawingMenu.Add(new MenuCheckbox("drawMode", "Draw Q Count Down", true));
 
             killstealMenu = Home.AddSubMenu(prefix + "KillSteal");
