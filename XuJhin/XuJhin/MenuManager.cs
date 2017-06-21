@@ -22,6 +22,7 @@ namespace XuJhin
 
             comboMenu = Home.AddSubMenu(prefix + "Combo");
             comboMenu.Add(new MenuCheckbox("useQ", "Use Q", true));
+            comboMenu.Add(new MenuCheckbox("useAAQ", "Use Q After AA", true));
             comboMenu.Add(new MenuCheckbox("useW", "Use W", true));
             comboMenu.Add(new MenuCheckbox("useWbuff", "Only W Marked", true));
             foreach (var enemy in ObjectManager.Heroes.Enemies) //you are checking enemy champs.. .Me and .Ally are not enemies and will never be.

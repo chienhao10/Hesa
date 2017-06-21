@@ -28,6 +28,8 @@ namespace SimpleActivator.Modes
             var heal = ssMenu.GetCheckbox("Heal");
             var hp = ssMenu.GetSlider("ssheal");
             var healSlot = ObjectManager.Player.Spellbook.Spells.FirstOrDefault(x => x.SpellData.Name.ToLower().Contains("heal"));
+            if (healSlot == null)
+                return;
 
             if (healSlot != null)
             {

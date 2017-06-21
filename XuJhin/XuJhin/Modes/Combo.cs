@@ -35,16 +35,15 @@ namespace XuJhin.Modes
 
             if(ObjectManager.Player.HasBuff("JhinRShot")) return;
 
-            var q = comboMenu.GetCheckbox("useQ") && Q.IsReady();
-           
+            var q = comboMenu.GetCheckbox("useQ") && Q.IsReady();           
             var qtarget = TargetSelector.GetTarget(Q.Range, TargetSelector.DamageType.Physical);
-           
 
             if (qtarget.IsValidTarget() && !ObjectManager.Player.HasBuff("JhinRShot") && q)
             {
                 //Chat.Print("Q");
                 Q.Cast(qtarget);
             }
+
             var e = comboMenu.GetCheckbox("useE") && E.IsReady();
             var etarget = TargetSelector.GetTarget(E.Range, TargetSelector.DamageType.Physical);
             if (e && etarget.IsValidTarget(E.Range) && !ObjectManager.Player.HasBuff("JhinRShot"))

@@ -39,18 +39,32 @@ namespace XuJhin
             LoadSpells();
 
             HesaEngine.SDK.AntiGapcloser.OnEnemyGapcloser += Modes.AntiGapcloser.DoAntigapclose;
-
+            HesaEngine.SDK.Orbwalker.AfterAttack += Orbwalker_AfterAttack;
             LoadDrawings();
 
             Game.OnTick += Game_OnTick;
             Chat.Print(" Xu Jhin Loaded");
         }
 
+        private void Orbwalker_AfterAttack(AttackableUnit unit, AttackableUnit target)
+        {
+            var q = comboMenu.GetCheckbox("useAAQ") && Q.IsReady();
+            var qtarget = TargetSelector.GetTarget(Q.Range, TargetSelector.DamageType.Physical);
+
+            if (qtarget.IsValidTarget() && !ObjectManager.Player.HasBuff("JhinRShot") && q)
+            {
+                Chat.Print("Q");
+                Q.Cast(qtarget);
+            }
+        }
 
         int rRange = 3500;
 
         private void Game_OnTick()
         {
+            if (Player.IsRecalling() || Player.IsDead)
+                return;
+
             var mana = Player.ManaPercent;
 
             if (killstealMenu.GetCheckbox("enable"))

@@ -20,7 +20,7 @@ namespace XuJhin.Modes
                 Chat.Print("gapw");
             }
 
-            if (e && gapcloser.Sender.IsEnemy && gapcloser.Sender.IsValidTarget(E.Range) && gapcloser.End.Distance(ObjectManager.Player.Position) > 300)
+            if (e && gapcloser.Sender.IsEnemy && gapcloser.Sender.IsValidTarget(E.Range) && gapcloser.End.Distance(ObjectManager.Player.Position) < 300)
             {
                 E.PredictionCast(gapcloser.Sender, HitChance.Medium);
                 Chat.Print("gape");
