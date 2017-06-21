@@ -29,6 +29,8 @@ namespace XuTwitch.Modes
             var heal = ssMenu.GetCheckbox("Heal");
             var hp = ssMenu.GetSlider("ssheal");
             var healSlot = ObjectManager.Player.Spellbook.Spells.FirstOrDefault(x => x.SpellData.Name.ToLower().Contains("heal"));
+            if (healSlot == null)
+                return;
 
             if (healSlot != null)
             {
@@ -43,6 +45,8 @@ namespace XuTwitch.Modes
         public static void DoSmite()
         {
             var smiteSlot = ObjectManager.Player.Spellbook.Spells.FirstOrDefault(x => x.SpellData.Name.ToLower().Contains("smite"));
+            if (smiteSlot == null)
+                return;
             if (smiteSlot != null)
             {
                 SmiteSpell = new Spell(smiteSlot.Slot, 570f, TargetSelector.DamageType.True);

@@ -100,6 +100,8 @@ namespace XuTwitch
             miscMenu.Add(new MenuCheckbox("item", "Use Items", true));
             miscMenu.Add(new MenuCheckbox("QSS", "Auto QSS", true));
             miscMenu.Add(new MenuCheckbox("orb", "Use Orbs/Trinkets In Combo", true));
+            miscMenu.Add(new MenuCheckbox("blue", "Use Farsigh Orbs", true));
+            miscMenu.Add(new MenuCheckbox("yellow", "Use Trinkets", true));
             miscMenu.Add(new MenuCheckbox("agW", "AntiGapclose W", true));
             miscMenu.Add(new MenuSlider("mana", "Mana % must be >= ", 10, 100, 30));
             //miscMenu.Add(new MenuCheckbox("save", "Always Save Mana For E", true));

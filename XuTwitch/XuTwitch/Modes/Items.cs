@@ -19,7 +19,35 @@ namespace XuTwitch.Modes
             private static readonly Item blue = new Item(3363, 4000);
             private static readonly Item Yellow = new Item(3340, 600);
 
-            public static void DoItems()
+        public static void Doorbs()
+        {
+            var Enemys = ObjectManager.Heroes.Enemies;
+            var orb = miscMenu.GetCheckbox("orb");
+            var blueon = miscMenu.GetCheckbox("blue");
+            var yellow = miscMenu.GetCheckbox("yellow");
+
+            if (blue.IsOwned() && blue.IsReady() || Yellow.IsOwned() && Yellow.IsReady())
+                foreach (var target in Enemys)
+                {
+                    var lastPos = target.Position;
+                    if (!target.IsVisible && !target.IsZombie)
+                    {
+                        //Chat.Print("cant see");
+                        if (blueon && !target.IsVisible && orb && (ObjectManager.Player.Position - lastPos).Length() <= 4000)
+                        {
+                            blue.Cast(lastPos);
+                            //Chat.Print("blue");
+                        }
+                        if (yellow && orb && (ObjectManager.Player.Position - lastPos).Length() <= 500)
+                        {
+                            //Chat.Print("yellow");
+                            Yellow.Cast(lastPos);
+                        }
+                    }
+                }
+        }
+
+        public static void DoItems()
             {
                 var item = miscMenu.GetCheckbox("item");
 
@@ -53,7 +81,7 @@ namespace XuTwitch.Modes
                     }
                 }
 
-                var Enemys = ObjectManager.Heroes.Enemies;
+                /*var Enemys = ObjectManager.Heroes.Enemies;
                 var orb = miscMenu.GetCheckbox("orb");
 
                 if (blue.IsOwned() && blue.IsReady() || Yellow.IsOwned() && Yellow.IsReady())
@@ -70,7 +98,7 @@ namespace XuTwitch.Modes
                                 Yellow.Cast(lastPos);
                             }
                         }
-                    }
+                    }*/
             }
         }
     }

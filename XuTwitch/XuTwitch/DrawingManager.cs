@@ -39,8 +39,10 @@ namespace XuTwitch
             {
                 Drawing.DrawCircle(ObjectManager.Me.Position, R.Range, Color.Red);
             }
-
+            
             var smiteSlot = ObjectManager.Player.Spellbook.Spells.FirstOrDefault(x => x.SpellData.Name.ToLower().Contains("smite"));
+            if (smiteSlot == null)
+                return;
             if (smiteSlot != null)
             {
                 SmiteSpell = new Spell(smiteSlot.Slot, 570f, TargetSelector.DamageType.True);

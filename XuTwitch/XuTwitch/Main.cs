@@ -63,6 +63,7 @@ namespace XuTwitch
             {
                 Combo.DoCombo();
                 Items.DoItems();
+                Items.Doorbs();
             }
 
             if (Orbwalker.ActiveMode == (OrbwalkingMode.Harass) && mana >= harassMenu.GetSlider("mana"))
