@@ -79,13 +79,13 @@ namespace SimpleActivator.Modes
                 if (Mercurial.IsReady() && Mercurial.IsOwned())
                 {
                     Mercurial.Cast();
-                    Chat.Print("no1");
+                    //Chat.Print("no1");
 
                 }
                 if (QSS.IsReady() && QSS.IsOwned())
                 {
                     QSS.Cast();
-                    Chat.Print("no2");
+                    //Chat.Print("no2");
 
                 }
                 if (Dervish.IsReady() && Dervish.IsOwned())
@@ -272,19 +272,24 @@ namespace SimpleActivator.Modes
         {
             var Enemys = ObjectManager.Heroes.Enemies;
             var orb = orbMenu.GetCheckbox("enable");
+            var blueon = orbMenu.GetCheckbox("blue");
+            var yellow = orbMenu.GetCheckbox("yellow");
 
             if (blue.IsOwned() && blue.IsReady() || Yellow.IsOwned() && Yellow.IsReady())
                 foreach (var target in Enemys)
                 {
                     var lastPos = target.Position;
-                    if (!target.IsVisible)
-                        Chat.Print("cant see2");
+                    if (!target.IsVisible && !target.IsZombie)
                     {
-                        Chat.Print("cant see");
-                        if (orb && (ObjectManager.Player.Position - lastPos).Length() <= 3500)
+                        //Chat.Print("cant see");
+                        if (blueon && !target.IsVisible && orb && (ObjectManager.Player.Position - lastPos).Length() <= 4000)
                         {
-                            //Chat.Print("can see");
                             blue.Cast(lastPos);
+                            //Chat.Print("blue");
+                        }
+                        if (yellow && orb && (ObjectManager.Player.Position - lastPos).Length() <= 500)
+                        {
+                            //Chat.Print("yellow");
                             Yellow.Cast(lastPos);
                         }
                     }

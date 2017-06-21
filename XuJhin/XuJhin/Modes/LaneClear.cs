@@ -26,17 +26,17 @@ namespace XuJhin.Modes
                 if (w && m.IsValidTarget(W.Range))
                 {
                     W.PredictionCast(m, HitChance.High);
-                   // Chat.Print("lcw");
+                    //Chat.Print("lcw");
                 }
                 if (q && MinionAround >= 3 && m.IsValidTarget(Q.Range))
                 {
                     Q.Cast(m);
-                   // Chat.Print("lcq");
+                    //Chat.Print("lcq");
                 }
                 if (e && MinionAround >= 3 && m.IsValidTarget(E.Range))
                 {
                     E.Cast(m.Position);
-                   // Chat.Print("lcr");
+                    //Chat.Print("lcr");
                 }
 
             }

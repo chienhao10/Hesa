@@ -43,7 +43,7 @@ namespace XuJhin
             LoadDrawings();
 
             Game.OnTick += Game_OnTick;
-            Chat.Print(" Xu Jhin Loaded WW");
+            Chat.Print(" Xu Jhin Loaded");
         }
 
 
@@ -63,6 +63,7 @@ namespace XuJhin
             {
                 Combo.DoCombo();
                 Items.DoItems();
+                Items.Doorbs();
             }
 
             if (Orbwalker.ActiveMode == (OrbwalkingMode.Harass) && mana >= harassMenu.GetSlider("mana"))
@@ -82,19 +83,17 @@ namespace XuJhin
                 Items.DoItems();
             }
 
-            if (rMode.GetKeybind("rKey"))
+            /*if (rMode.GetKeybind("rKey"))
             {
                 RTap.DoRTap();
-            }
-            if (potMenu.GetCheckbox("enable"))
-            {
-                //Pots.DoPots();
-            }
+            }*/
             if (autowMenu.GetCheckbox("autoW"))
             {
                 AutoW.DoAutoW();
             }
-
+            Pots.DoPots();
+            SS.DoSmite();
+            SS.DoHeal();
 
             if (rRange == GetRRange()) return;
             rRange = GetRRange();
@@ -104,11 +103,6 @@ namespace XuJhin
         public static int GetRRange()
         {
             return comboMenu.GetSlider("rRange");
-        }
-
-        public static int GetEStackCount(Obj_AI_Base target)
-        {
-            return target.HasBuff("TwitchDeadlyVenom") ? target.GetBuffCount("TwitchDeadlyVenom") : 0;
         }
     }
 }

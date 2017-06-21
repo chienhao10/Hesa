@@ -11,15 +11,15 @@ namespace XuJhin.Modes
             var r = R.IsReady();
             var target = TargetSelector.GetTarget(3500, TargetSelector.DamageType.Physical);
             var ron = rMode.GetCheckbox($"ROn{target.ChampionName}");
-
-
-            if (target != null && ObjectManager.Player.HasBuff("JhinRShot") && rMode.GetKeybind("rKey"))
+            
+            if (target != null && rMode.GetKeybind("rKey") && r && ron)
             {
-                if (r && ron)
-                {
-                    R.PredictionCast(target, HitChance.High);
-                    //Chat.Print("rtap");
-                }
+                //Chat.Print("rtap1");
+                Main.Orbwalker.SetMovement(false);
+                Main.Orbwalker.SetAttack(false);
+                //Chat.Print("rtap2");
+                R.PredictionCast(target, HitChance.High);
+               // Chat.Print("rtap3");
             }
         }
     }

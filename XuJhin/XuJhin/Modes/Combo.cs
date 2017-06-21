@@ -13,9 +13,10 @@ namespace XuJhin.Modes
         public static void DoCombo()
         {
             var r = comboMenu.GetCheckbox("useR") && R.IsReady();
+            var nor = comboMenu.GetSlider("ksRange");
             var rtarget = TargetSelector.GetTarget(GetRRange(), TargetSelector.DamageType.Physical);
 
-            if (rtarget.IsValidTarget() && r)
+            if (rtarget.IsValidTarget() && r && !rtarget.IsValidTarget(nor))
             {
                 if (ObjectManager.Player.HasBuff("JhinRShot"))
                 {
@@ -58,15 +59,26 @@ namespace XuJhin.Modes
             var w = comboMenu.GetCheckbox("useW") && W.IsReady();
             foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x =>x.IsValidTarget(W.Range) && comboMenu.GetCheckbox("WOn" + x.ChampionName) && !ObjectManager.Player.HasBuff("JhinRShot")))
             {
-                if (w && wbuff && enemy.HasBuff("jhinespotteddebuff") )
+                if (w && wbuff && enemy.HasBuff("jhinespotteddebuff") && enemy != null)
                 {
-                    W.PredictionCast(enemy);
-                   // Chat.Print("w buff1");
+                    var location = DarkPrediction.CirclerPrediction(W, enemy, 1);
+                    if (location != DarkPrediction.empt && ObjectManager.Me.Position.Distance(location) <= W.Range)
+                    {
+                        W.Cast(location);
+                        //Chat.Print(W.Delay);
+                        break;
+                    }
                 }
-                if (w && !wbuff)
+                if (w && !wbuff && enemy != null)
                 {
-                    W.PredictionCast(enemy);
-                   // Chat.Print("w buff2");
+                    var location = DarkPrediction.CirclerPrediction(W, enemy, 1);
+                    if (location != DarkPrediction.empt && ObjectManager.Me.Position.Distance(location) <= W.Range)
+                    {
+                        W.Cast(location);
+                        //Chat.Print("w buff2");
+                        break;
+                    }
+                    
                 }
             }
         }

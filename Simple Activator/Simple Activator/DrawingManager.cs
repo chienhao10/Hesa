@@ -27,7 +27,7 @@ namespace SimpleActivator
                 SmiteSpell = new Spell(smiteSlot.Slot, 570f, TargetSelector.DamageType.True);
             }
 
-            if (drawingMenu.GetCheckbox("drawSmite") && SmiteSpell != null)
+            if (drawingMenu.GetCheckbox("drawSmite") && SmiteSpell != null && SmiteSpell.IsReady())
             {
                 Drawing.DrawCircle(ObjectManager.Me.Position, SmiteSpell.Range, Color.GhostWhite);
             }

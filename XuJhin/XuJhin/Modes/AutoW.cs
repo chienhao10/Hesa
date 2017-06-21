@@ -2,6 +2,7 @@
 using static XuJhin.SpellManager;
 using static XuJhin.MenuManager;
 using System.Linq;
+using XuJhin;
 
 namespace XuJhin.Modes
 {
@@ -13,44 +14,14 @@ namespace XuJhin.Modes
 
             //Boli's Code
             if (!w || ObjectManager.Player.HasBuff("JhinRShot")) return;
-            foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => x.IsValidTarget(W.Range) && autowMenu.GetCheckbox("Won" + x.ChampionName) && x.HasBuff("jhinespotteddebuff")))
-            {
-                if (w)
-                    W.PredictionCast(enemy);
-            }
-
-
-
-
-
-            /*
-
-            //Xu's Code
-            var target = ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe && x.IsValidTarget(W.Range));
-            var wtarget = TargetSelector.GetTarget(W.Range, TargetSelector.DamageType.Physical);
-            var won = autowMenu.GetCheckbox($"Won{wtarget.ChampionName}");
             
-
-            if (target != null)
+            foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => x.IsValidTarget(W.Range) && harassMenu.GetCheckbox("WOn" + x.ChampionName) && !ObjectManager.Player.HasBuff("JhinRShot") && x.HasBuff("jhinespotteddebuff")))
             {
-                if (w && won && !ObjectManager.Player.HasBuff("JhinRShot"))
-                {
-                    foreach (var enemy in target)
-                    {
-                        if (enemy.IsValidTarget(W.Range))
-                        {
-                            if (w)
-                            {
-                                if (enemy.HasBuff("jhinespotteddebuff"))
-                                {
-                                    W.PredictionCast(enemy);
-                                    Chat.Print("auto w");
-                                }
-                            }
-                        }
-                    }
-                }
-            }*/
+                var location = DarkPrediction.CirclerPrediction(W, enemy, 1);
+                if (enemy != null && w && location != DarkPrediction.empt && ObjectManager.Me.Position.Distance(location) <= W.Range)
+                    W.Cast(location);
+                break;
+            }
         }
     }
 }

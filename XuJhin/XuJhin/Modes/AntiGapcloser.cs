@@ -17,13 +17,13 @@ namespace XuJhin.Modes
             if (w && gapcloser.Sender.IsEnemy && gapcloser.Sender.IsValidTarget(W.Range) && gapcloser.Sender.HasBuff("jhinespotteddebuff"))
             {
                 W.PredictionCast(gapcloser.Sender, HitChance.High);
-                //Chat.Print("gapw");
+                Chat.Print("gapw");
             }
 
             if (e && gapcloser.Sender.IsEnemy && gapcloser.Sender.IsValidTarget(E.Range) && gapcloser.End.Distance(ObjectManager.Player.Position) > 300)
             {
                 E.PredictionCast(gapcloser.Sender, HitChance.Medium);
-                //Chat.Print("gape");
+                Chat.Print("gape");
             }
         }
     }
