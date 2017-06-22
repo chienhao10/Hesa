@@ -9,6 +9,9 @@ namespace SimpleActivator.Modes
 {
     public static class Items
         {
+        private static readonly Item GunB = new Item(3146, 700);
+        private static readonly Item Rock = new Item(3152, 200);
+        private static readonly Item GPL = new Item(3146, 400);
         private static readonly Item BOTRK = new Item(3153, 550);
         private static readonly Item Bilgewater = new Item(3144, 550);
         private static readonly Item Yomamas = new Item(3142, 400);
@@ -29,7 +32,25 @@ namespace SimpleActivator.Modes
             var ti = itemMenu.GetCheckbox("ti");
             var th = itemMenu.GetCheckbox("th");
             var bok = itemMenu.GetCheckbox("bok");
+            var Gun = itemMenu.GetCheckbox("gb");
+            var Rocket = itemMenu.GetCheckbox("roc");
+            var GPL800 = itemMenu.GetCheckbox("gpl");
 
+            foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe && x != null))
+                if (GPL800 && GPL.IsOwned() && GPL.IsReady() && enemy.IsValidTarget(400))
+                {
+                    GPL.Cast(enemy);
+                }
+            foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe && x != null))
+                if (Rocket && Rock.IsOwned() && Rock.IsReady() && enemy.IsValidTarget(200))
+                {
+                    Rock.Cast(enemy);
+                }
+            foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe && x != null))
+                if (Gun && GunB.IsOwned() && GunB.IsReady() && enemy.IsValidTarget(600))
+                {
+                    GunB.Cast(enemy);
+                }
             foreach (var enemy in ObjectManager.Heroes.Enemies.Where(x => !x.IsAlly && !x.IsMe && x != null))
                 if (yo && Yomamas.IsOwned() && Yomamas.IsReady() && enemy.IsValidTarget(600))
                 {

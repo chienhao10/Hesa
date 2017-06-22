@@ -11,3 +11,4 @@ c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activ
 c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\bin\Debug\SharpDX.Direct3D9.xml
 c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\obj\Debug\Simple Activator.dll
 c:\users\sch\documents\visual studio 2015\Projects\Simple Activator\Simple Activator\obj\Debug\Simple Activator.pdb
+C:\Users\SCH\Documents\Visual Studio 2015\Projects\Simple Activator\Simple Activator\obj\Debug\Simple Activator.csprojResolveAssemblyReference.cache

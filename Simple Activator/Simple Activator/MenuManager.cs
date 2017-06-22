@@ -25,6 +25,9 @@ namespace SimpleActivator
             itemMenu.Add(new MenuCheckbox("rh", "Use Ravenous Hydra", true));
             itemMenu.Add(new MenuCheckbox("th", "Use Titanic Hydra", true));
             itemMenu.Add(new MenuSeparator("Hydras, Timat Will use In LaneClear"));
+            itemMenu.Add(new MenuCheckbox("gb", "Use Gunblade", true));
+            itemMenu.Add(new MenuCheckbox("roc", "Use Rocket Probelt", true));
+            itemMenu.Add(new MenuCheckbox("gpl", "Use GPL-800", true));
 
             orbMenu = Home.AddSubMenu(prefix + "Trinkets");
             orbMenu.Add(new MenuCheckbox("enable", "Enable In Combo", true));
